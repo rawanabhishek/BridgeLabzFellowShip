@@ -341,23 +341,40 @@ public class FunctionalUtility {
 
 	}
 
-	/********************************************************************************************************
+	/****************************************************************************************************/
+	/*
 	 * Purpose: to find the windchill temperature in farenheit
 	 * 
 	 * @return return wind chill temperature
 	 */
 
 	public String wind(double temperature, double windspeed) {
-		
-		//checking weather the temprature is less than 51 and windspped lies between 3 to 121
-		  while (!(temperature >= 50) || !(windspeed >= 120 || windspeed < 3)) {
+
+		// checking weather the temprature is less than 51 and windspped lies between 3
+		// to 121
+		while (!(temperature >= 50) || !(windspeed >= 120 || windspeed < 3)) {
 			double windchill = 35.74 + 0.6215 * temperature
 					+ (0.4275 * temperature - 35.75) * Math.pow(windspeed, 0.16);
 			return "the wind Chill in Fahrenheit is : " + windchill;
 
 		}
-		  return "Wrong input";
-		 
+		return "Wrong input";
+
+	}
+
+	/*************************************************************************************************/
+	// Purpose: to find the elapsed time
+
+	private final long start;
+
+	public FunctionalUtility() {
+		start = System.currentTimeMillis();
+	}
+
+	// return the elapsed time
+	public double elapsedTime() {
+		long now = System.currentTimeMillis();
+		return (now - start) / 1000.0;
 	}
 
 }

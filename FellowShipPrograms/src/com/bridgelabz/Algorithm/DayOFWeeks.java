@@ -20,13 +20,14 @@ public class DayOFWeeks {
         AlgorithmUtility utility = new AlgorithmUtility();
         
         
-        int date =Integer.parseInt(args[0]);
+       // int date =Integer.parseInt(args[0]);
         
+        int date=scanner.nextInt();
+       // int month =Integer.parseInt(args[0]);
         
-        int month =Integer.parseInt(args[0]);
-        
-        
-        int year=Integer.parseInt(args[0]);
+        int month=scanner.nextInt();
+       // int year=Integer.parseInt(args[0]);
+        int year=scanner.nextInt();
         
         boolean leapyear =utility.LeapyearChecker(year);
         boolean ValidateDate =utility.DaysWeek(date, month, leapyear);

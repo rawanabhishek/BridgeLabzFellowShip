@@ -109,21 +109,22 @@ public class AlgorithmUtility {
 	/****************************************************************************/
 	// to perform binary search on integer array
 	public void binarySearchInt(int[] arr, int key) {
+		// 1 2 4 5 6 8 9
 		int li, hi, mi;
 		int size = arr.length;
 
 		li = 0;
-		hi = size;
+		hi = size - 1;
 		mi = (li + hi) / 2;
 
 		// taking the while till li is equal to hi
 		while (li <= hi) {
 
 			// mi is equal to key printing the position and breaking the loop
-			if (mi == key) {
-				System.out.println("The key is at " + mi + " position");
+			if (arr[mi] == key) {
+				System.out.println("The Integerkey is at " + mi + " position");
 				break;
-			} else if (mi > key) {
+			} else if (arr[mi] > key) {
 
 				hi = mi - 1;
 				mi = (li + hi) / 2;
@@ -152,7 +153,7 @@ public class AlgorithmUtility {
 
 			// mi is equal to key printing the position and breaking the loop
 			if (arr[mi].equals(keyStr)) {
-				System.out.println("The key is at " + mi + " position");
+				System.out.println("The Stringkey is at " + mi + " position");
 				break;
 			} else if (arr[mi].compareTo(keyStr) > 0) {
 
@@ -440,13 +441,12 @@ public class AlgorithmUtility {
 		return null;
 
 	}
-	
+
 	/********************************************************************************************************
 	 * Purpose: to print the square root of a number
 	 */
 
 	public double Square(int c) {
-		
 
 		double t;
 		t = c;
@@ -457,6 +457,35 @@ public class AlgorithmUtility {
 		}
 		return t;
 
+	}
+
+	/*********************************************************************************************/
+	// Purpose: to find the elapsed time
+
+	private final long start;
+
+	public AlgorithmUtility() {
+		start = System.currentTimeMillis();
+	}
+
+	// return the elapsed time
+	public double elapsedTime() {
+		long now = System.currentTimeMillis();
+		return (now - start) / 1000.0;
+	}
+
+	/**********************************************************************************************/
+	 //Purpose: to print the monthly payment
+	
+	public void Interest(double principal, double years, double rate) {
+		double payment;
+		double n=12*years;
+		double r=rate/(12*100);
+		
+		payment=principal*r/1-Math.pow(1-r, -n);
+		
+	  System.out.println("Monthly payment you have to make is : "+payment);
+		
 	}
 
 }
