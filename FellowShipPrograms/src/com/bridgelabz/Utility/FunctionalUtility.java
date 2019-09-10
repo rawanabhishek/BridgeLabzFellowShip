@@ -83,5 +83,24 @@ public class FunctionalUtility {
 		}
 
 	}
+	
+	
+	/******************************************************************************/
+	// Purpose: to print harmonic number
+
+	 public void  Harmonic(int n ) {
+	    	double sum=0;
+	    	if(n>=1) {
+	    		for(int i = 1; i <= n ; i ++) {
+	    			double Hn = 1.0/i;
+	    			
+	    			sum+=Hn;
+	    			
+	    		}
+	    		
+	    		System.out.println("The  Hamrmonic Number is  :"+sum);
+	    	}
+	    	
+	    }
 
 }
