@@ -297,18 +297,67 @@ public class FunctionalUtility {
 			System.out.println(" not exist ");
 
 	}
-	
-	 /******************************************************************************/
-     /*  Purpose: to find the euclidean distance
-     * @param x  to take the value of x from the user
-     * @param y  to take the value of y from the user
-     * @return   return the value of distance 
-     */
-    public Double Distance(double x , double y ) {
-    	double distance = Math.sqrt(x*x+y*y);
-    	
-    	return  distance;
-    }
-    
+
+	/******************************************************************************/
+	/*
+	 * Purpose: to find the euclidean distance
+	 * 
+	 * @param x to take the value of x from the user
+	 * 
+	 * @param y to take the value of y from the user
+	 * 
+	 * @return return the value of distance
+	 */
+	public Double Distance(double x, double y) {
+		double distance = Math.sqrt(x * x + y * y);
+
+		return distance;
+	}
+
+	/********************************************************************************/
+	/*
+	 * Purpose: to find the root of the quadratic equation
+	 * 
+	 * @param a taking value of a from user
+	 * 
+	 * @param b taking value of b from user
+	 * 
+	 * @param c taking value of c from user
+	 * 
+	 * @return
+	 */
+	public String Quadratic(double a, double b, double c) {
+		// calculating delta
+		double delta = (b * b - (4 * a * c));
+
+		// calculating the first root
+		double root1 = (-b + Math.sqrt(delta) / (2 * a));
+
+		// calculating the second root
+		double root2 = (-b - Math.sqrt(delta) / (2 * a));
+
+		// returing the value of root 1 and root 2
+		return "Root   is  : " + root1 + " and  " + root2;
+
+	}
+
+	/********************************************************************************************************
+	 * Purpose: to find the windchill temperature in farenheit
+	 * 
+	 * @return return wind chill temperature
+	 */
+
+	public String wind(double temperature, double windspeed) {
+		
+		//checking weather the temprature is less than 51 and windspped lies between 3 to 121
+		  while (!(temperature >= 50) || !(windspeed >= 120 || windspeed < 3)) {
+			double windchill = 35.74 + 0.6215 * temperature
+					+ (0.4275 * temperature - 35.75) * Math.pow(windspeed, 0.16);
+			return "the wind Chill in Fahrenheit is : " + windchill;
+
+		}
+		  return "Wrong input";
+		 
+	}
 
 }
