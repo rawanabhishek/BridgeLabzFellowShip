@@ -156,5 +156,35 @@ public class FunctionalUtility {
 		
 		
 	}
+	/******************************************************************************/
+	// Purpose : to generate random number in a given range
+	
+	public int random(int range) {
+		return (int)(Math.random()*range);
+	}
+	
+	
+	/******************************************************************************/
+	// Purpose : to print the no of wins , average win and average loss 
+	
+	public int coupon(int range) {
+		int count=0;
+		int distinct=0;
+		int value;
+		boolean isCollected[]=new boolean[range];
+		while(distinct<range) {
+			 value=random(range);
+			 count++;
+			 if(!isCollected[value]) {
+				 distinct++;
+				 isCollected[value]=true;
+			 }
+		}
+		
+		return count;
+		
+		
+		
+	}
 	
 }
