@@ -517,5 +517,37 @@ public class AlgorithmUtility {
 	        
 	        System.out.println("Your number is :"+mi);
 	}
+	
+	/********************************************************************************************************
+	   Purpose: to convert a decimal number into a binary number 
+	   */
+	 
+	 public void decimaltobinary(int num) {
+		 
+		 int rem [] = new int [num];
+		 
+		 int index =0;
+		 
+		 while(num>0) {
+			 rem[index]=num%2;
+			 index++;
+			 num=num/2;
+		 }
+		 
+		
+		
+		 for(int i=(index-1); i >=0 ; i--) {
+			 
+			 System.out.print(rem[i]);
+			 
+		 }
+		
+		 }
+	 
+	   public int swapnibble(int x) {
+		 return (((x&0x0F)<<4)|((x&0xF0)>>4));
+	 }
+	 
+	 
 
 }
