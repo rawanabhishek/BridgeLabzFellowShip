@@ -21,6 +21,7 @@ public class CouponNumbers {
 		Scanner scanner = new Scanner(System.in);
 		FunctionalUtility utility = new FunctionalUtility();
 		
+		//taking the value of distinct coupon
 		System.out.println("Enter the Range of N distinct Coupon Number : ");
 		int range=scanner.nextInt();
 		

@@ -9,7 +9,11 @@
  ******************************************************************************/
 package com.bridgelabz.Utility;
 
+import java.util.Scanner;
+
 public class FunctionalUtility {
+
+	Scanner scanner = new Scanner(System.in);
 
 	/******************************************************************************/
 	// to replace the name in the given string
@@ -121,70 +125,157 @@ public class FunctionalUtility {
 
 	}
 
-	
 	/******************************************************************************/
-	// Purpose : to print the no of wins , average win and average loss 
+	// Purpose : to print the no of wins , average win and average loss
 
-	
 	public void gambler(int stake, int goal, int num) {
-		int win=0,loss=0,bets=0;
-		
-		for(int i=0;i<num;i++) {
-		double value= Math.random();
-		if(value>0.5) {
-			stake++;
-			win++;
-			bets++;
-			
+		int win = 0, loss = 0, bets = 0;
+
+		for (int i = 0; i < num; i++) {
+			double value = Math.random();
+			if (value > 0.5) {
+				stake++;
+				win++;
+				bets++;
+
+			} else {
+				stake--;
+				loss++;
+				bets++;
+			}
+
+			if (stake == goal || stake == 0) {
+				break;
+			}
 		}
-		else {
-			stake--;
-			loss++;
-			bets++;
-		}
-		
-		if(stake==goal || stake==0) {
-			break;
-		}
-		}
-		 System.out.println("No of wins is "+win);
-		 double averagewin=(win*100)/bets;
-		 double averageloss=(loss*100)/bets;
-		 System.out.println("Average  wins is "+averagewin);
-		 System.out.println("Average  loss is "+averageloss);
-		
-		
-		
+		System.out.println("No of wins is " + win);
+		double averagewin = (win * 100) / bets;
+		double averageloss = (loss * 100) / bets;
+		System.out.println("Average  wins is " + averagewin);
+		System.out.println("Average  loss is " + averageloss);
+
 	}
+
 	/******************************************************************************/
 	// Purpose : to generate random number in a given range
-	
+
 	public int random(int range) {
-		return (int)(Math.random()*range);
+		return (int) (Math.random() * range);
 	}
-	
-	
+
 	/******************************************************************************/
-	// Purpose : to print the no of wins , average win and average loss 
-	
+	// Purpose : to print the no of wins , average win and average loss
+
 	public int coupon(int range) {
-		int count=0;
-		int distinct=0;
+		int count = 0;
+		int distinct = 0;
 		int value;
-		boolean isCollected[]=new boolean[range];
-		while(distinct<range) {
-			 value=random(range);
-			 count++;
-			 if(!isCollected[value]) {
-				 distinct++;
-				 isCollected[value]=true;
-			 }
+		boolean isCollected[] = new boolean[range];
+		while (distinct < range) {
+			value = random(range);
+			count++;
+			if (!isCollected[value]) {
+				distinct++;
+				isCollected[value] = true;
+			}
+		}
+
+		return count;
+
+	}
+
+	/******************************************************************************/
+	// Purpose : to take input from user to store value in a array
+
+	public void ScanIntArray(int arr[][],int row, int coloumn) {
+		
+		System.out.println("Enter the value for [row][coloumn] for Integer array");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.println("["+i+"] "+"["+j+"]");
+				arr[i][j] = scanner.nextInt();
+
+			}
+			
+		
 		}
 		
-		return count;
+	}
+	/******************************************************************************/
+	// Purpose : to print value of a given array
+	
+	public void printIntArray(int arr[][],int row ,int coloumn) {
+		System.out.println("The integer array is ");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.print(arr[i][j]+" ");
+				
+
+			}
+			System.out.println();
+		}
+	}
+	
+	/******************************************************************************/
+	// Purpose : to take input from user to store value in a array
+
+	public void ScanDoubleArray(double arr[][],int row, int coloumn) {
+		
+		System.out.println("Enter the value for [row][coloumn] for Double Array");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.println("["+i+"] "+"["+j+"]");
+				arr[i][j] = scanner.nextDouble();
+
+			}
+			
+		}
 		
 		
 		
 	}
+	/******************************************************************************/
+	// Purpose : to print value of a given array
 	
+	public void printDoubleArray(double arr[][],int row ,int coloumn) {
+		System.out.println("The Double array is ");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.print(arr[i][j]+"  ");
+				
+
+			}
+			System.out.println();
+		}
+	}
+	
+	/******************************************************************************/
+	// Purpose : to take input from user to store value in a array
+
+	public void ScanBooleanArray(boolean arr[][],int row ,int coloumn) {
+		System.out.println("Enter the value for [row][coloumn] for boolean Array");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.println("["+i+"] "+"["+j+"]");
+				arr[i][j] = scanner.nextBoolean();
+
+			}
+			
+		}
+	}
+	/******************************************************************************/
+	// Purpose : to print value of a given array
+	
+	public void printBooleanArray(boolean arr[][],int row ,int coloumn) {
+		System.out.println("The boolean array is ");
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < coloumn; j++) {
+				System.out.print(arr[i][j]+"  ");
+				
+
+			}
+			System.out.println();
+		}
+	}
+
 }
