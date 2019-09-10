@@ -10,8 +10,11 @@
 package com.bridgelabz.Utility;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class AlgorithmUtility {
+	
+	Scanner scanner=new Scanner(System.in);
 
 	/****************************************************************************/
 
@@ -176,11 +179,11 @@ public class AlgorithmUtility {
 		int key;
 		int j;
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			key = arr[i];
 			j = i - 1;
 
-			while (j > 0 && arr[j] > key) {
+			while (j >=0 && arr[j] > key) {
 				arr[j + 1] = arr[j];
 				j = j - 1;
 			}
@@ -198,11 +201,11 @@ public class AlgorithmUtility {
 		String key;
 		int j;
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			key = arr[i];
 			j = i - 1;
 
-			while (j > 0 && (arr[j].compareTo(key) > 0)) {
+			while (j >= 0 && (arr[j].compareTo(key) > 0)) {
 				arr[j + 1] = arr[j];
 				j = j - 1;
 			}
@@ -486,6 +489,33 @@ public class AlgorithmUtility {
 		
 	  System.out.println("Monthly payment you have to make is : "+payment);
 		
+	}
+	
+	/**********************************************************************************************/
+	 //Purpose: to print the magic number 
+	
+	public void magic(int li,int hi,int mi) {
+		 while(li<hi) {
+	     	 System.out.println("if your number is between "+li+" to "+mi+" Press 1 ");
+	     	 System.out.println("if your number is between "+(mi+1)+" to "+hi+" Press 2");
+	         
+	     	 int uservalue =scanner.nextInt();
+	     	 if(uservalue==1) {
+	     	 
+	     		 hi=mi;
+	     		 mi=(li+hi)/2;
+	     	   
+	        	}
+	        	else if(uservalue==2) {
+	        		li=mi+1;
+	        		mi=(li+hi)/2;
+	        	}
+	        	else {
+	        		System.out.println("Wrong input ");
+	        	}
+	     	 }
+	        
+	        System.out.println("Your number is :"+mi);
 	}
 
 }
