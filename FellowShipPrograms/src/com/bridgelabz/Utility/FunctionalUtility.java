@@ -83,24 +83,78 @@ public class FunctionalUtility {
 		}
 
 	}
-	
-	
+
 	/******************************************************************************/
 	// Purpose: to print harmonic number
 
-	 public void  Harmonic(int n ) {
-	    	double sum=0;
-	    	if(n>=1) {
-	    		for(int i = 1; i <= n ; i ++) {
-	    			double Hn = 1.0/i;
-	    			
-	    			sum+=Hn;
-	    			
-	    		}
-	    		
-	    		System.out.println("The  Hamrmonic Number is  :"+sum);
-	    	}
-	    	
-	    }
+	public void Harmonic(int n) {
+		double sum = 0;
+		if (n >= 1) {
+			for (int i = 1; i <= n; i++) {
+				double Hn = 1.0 / i;
 
+				sum += Hn;
+
+			}
+
+			System.out.println("The  Hamrmonic Number is  :" + sum);
+		}
+
+	}
+
+	/******************************************************************************/
+	// Purpose: to compute factor of given numbers
+	public void factorcompute(int number) {
+
+		for (int i = 2; i * i <= number; i++) {
+			while (number % i == 0) {
+				System.out.print(i + " ");
+				number = number / i;
+			}
+
+		}
+
+		if (number > 1)
+			System.out.println(number);
+		else
+			System.out.println();
+
+	}
+
+	
+	/******************************************************************************/
+	// Purpose : to print the no of wins , average win and average loss 
+
+	
+	public void gambler(int stake, int goal, int num) {
+		int win=0,loss=0,bets=0;
+		
+		for(int i=0;i<num;i++) {
+		double value= Math.random();
+		if(value>0.5) {
+			stake++;
+			win++;
+			bets++;
+			
+		}
+		else {
+			stake--;
+			loss++;
+			bets++;
+		}
+		
+		if(stake==goal || stake==0) {
+			break;
+		}
+		}
+		 System.out.println("No of wins is "+win);
+		 double averagewin=(win*100)/bets;
+		 double averageloss=(loss*100)/bets;
+		 System.out.println("Average  wins is "+averagewin);
+		 System.out.println("Average  loss is "+averageloss);
+		
+		
+		
+	}
+	
 }
