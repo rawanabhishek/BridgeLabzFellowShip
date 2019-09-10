@@ -280,7 +280,7 @@ public class FunctionalUtility {
 
 	public void triplets(int[] arr, int n) {
 		int found = 0;
-		//prints if triplets with zero sum is found 
+		// prints if triplets with zero sum is found
 		for (int i = 0; i < n - 2; i++) {
 			for (int j = i + 1; j < n - 1; j++) {
 				for (int k = j + 1; k < n; k++) {
@@ -292,12 +292,23 @@ public class FunctionalUtility {
 				}
 			}
 		}
-		 // If no triplet with 0 sum found in array 
-	    if (found == 0) 
-	        System.out.println(" not exist "); 
-	  
-	
+		// If no triplet with 0 sum found in array
+		if (found == 0)
+			System.out.println(" not exist ");
 
 	}
+	
+	 /******************************************************************************/
+     /*  Purpose: to find the euclidean distance
+     * @param x  to take the value of x from the user
+     * @param y  to take the value of y from the user
+     * @return   return the value of distance 
+     */
+    public Double Distance(double x , double y ) {
+    	double distance = Math.sqrt(x*x+y*y);
+    	
+    	return  distance;
+    }
+    
 
 }
