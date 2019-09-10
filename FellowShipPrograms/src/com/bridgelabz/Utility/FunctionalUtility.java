@@ -187,95 +187,117 @@ public class FunctionalUtility {
 	/******************************************************************************/
 	// Purpose : to take input from user to store value in a array
 
-	public void ScanIntArray(int arr[][],int row, int coloumn) {
-		
+	public void ScanIntArray(int arr[][], int row, int coloumn) {
+
 		System.out.println("Enter the value for [row][coloumn] for Integer array");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.println("["+i+"] "+"["+j+"]");
+				System.out.println("[" + i + "] " + "[" + j + "]");
 				arr[i][j] = scanner.nextInt();
 
 			}
-			
-		
+
 		}
-		
+
 	}
+
 	/******************************************************************************/
 	// Purpose : to print value of a given array
-	
-	public void printIntArray(int arr[][],int row ,int coloumn) {
+
+	public void printIntArray(int arr[][], int row, int coloumn) {
 		System.out.println("The integer array is ");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.print(arr[i][j]+" ");
-				
+				System.out.print(arr[i][j] + " ");
 
 			}
 			System.out.println();
 		}
 	}
-	
+
 	/******************************************************************************/
 	// Purpose : to take input from user to store value in a array
 
-	public void ScanDoubleArray(double arr[][],int row, int coloumn) {
-		
+	public void ScanDoubleArray(double arr[][], int row, int coloumn) {
+
 		System.out.println("Enter the value for [row][coloumn] for Double Array");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.println("["+i+"] "+"["+j+"]");
+				System.out.println("[" + i + "] " + "[" + j + "]");
 				arr[i][j] = scanner.nextDouble();
 
 			}
-			
+
 		}
-		
-		
-		
+
 	}
+
 	/******************************************************************************/
 	// Purpose : to print value of a given array
-	
-	public void printDoubleArray(double arr[][],int row ,int coloumn) {
+
+	public void printDoubleArray(double arr[][], int row, int coloumn) {
 		System.out.println("The Double array is ");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.print(arr[i][j]+"  ");
-				
+				System.out.print(arr[i][j] + "  ");
 
 			}
 			System.out.println();
 		}
 	}
-	
+
 	/******************************************************************************/
 	// Purpose : to take input from user to store value in a array
 
-	public void ScanBooleanArray(boolean arr[][],int row ,int coloumn) {
+	public void ScanBooleanArray(boolean arr[][], int row, int coloumn) {
 		System.out.println("Enter the value for [row][coloumn] for boolean Array");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.println("["+i+"] "+"["+j+"]");
+				System.out.println("[" + i + "] " + "[" + j + "]");
 				arr[i][j] = scanner.nextBoolean();
 
 			}
-			
+
 		}
 	}
+
 	/******************************************************************************/
 	// Purpose : to print value of a given array
-	
-	public void printBooleanArray(boolean arr[][],int row ,int coloumn) {
+
+	public void printBooleanArray(boolean arr[][], int row, int coloumn) {
 		System.out.println("The boolean array is ");
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < coloumn; j++) {
-				System.out.print(arr[i][j]+"  ");
-				
+				System.out.print(arr[i][j] + "  ");
 
 			}
 			System.out.println();
 		}
+	}
+
+	/******************************************************************************/
+	// Purpose : to print the sum of three numbers whose values are equal to zero
+
+	public void triplets(int[] arr, int n) {
+		int found = 0;
+		//prints if triplets with zero sum is found 
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = i + 1; j < n - 1; j++) {
+				for (int k = j + 1; k < n; k++) {
+					if (arr[i] + arr[j] + arr[k] == 0) {
+						System.out.println(arr[i] + " " + arr[j] + " " + arr[k]);
+
+						found++;
+					}
+				}
+			}
+		}
+		 // If no triplet with 0 sum found in array 
+	    if (found == 0) 
+	        System.out.println(" not exist "); 
+	  
+	
+
 	}
 
 }
