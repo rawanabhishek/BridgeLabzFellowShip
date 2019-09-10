@@ -23,6 +23,7 @@ public class Anagram {
 
 		//taking first string from user
 		System.out.println("Enter String 1 : ");
+		
 		String one = scanner.nextLine();
 
 		//taking second string from user
