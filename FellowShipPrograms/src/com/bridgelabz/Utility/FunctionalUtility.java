@@ -376,5 +376,32 @@ public class FunctionalUtility {
 		long now = System.currentTimeMillis();
 		return (now - start) / 1000.0;
 	}
+	
+	/*************************************************************************************************/
+	// Purpose: to permute the string 
+
+	public void permute(String str,int start, int size) {
+		if(size==start) {
+			System.out.println(str);
+		}
+		else {
+			for(int i=start;i<=size;i++) {
+				str=swap(str,start,i);
+				permute(str,start+1,size );
+				str=swap(str,start,i);
+			}
+		}
+		
+	}
+
+	public String swap(String str, int i, int j) {
+		char temp;
+		char[] arr=str.toCharArray();
+		temp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=temp;
+		
+		return String.valueOf(arr);
+	}
 
 }

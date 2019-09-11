@@ -48,7 +48,7 @@ public class AlgorithmUtility {
 
 	public void primeRange(int start, int end) {
 		int temp = 0;
-		int count = 0;
+		
 		// start the loop from start and ending at end
 		for (int i = start; i < end; i++) {
 
@@ -61,9 +61,7 @@ public class AlgorithmUtility {
 			}
 			if (temp == 0 && i != 0 && i != 1) {
 				System.out.print(i + " ");
-				if (count == 25) {
-					count = 0;
-				}
+				
 			}
 
 			temp = 0;
@@ -156,7 +154,9 @@ public class AlgorithmUtility {
 
 			// mi is equal to key printing the position and breaking the loop
 			if (arr[mi].equals(keyStr)) {
+				System.out.println("KeyFound");
 				System.out.println("The Stringkey is at " + mi + " position");
+				
 				break;
 			} else if (arr[mi].compareTo(keyStr) > 0) {
 
@@ -587,7 +587,7 @@ public class AlgorithmUtility {
 	}
 	
 	/************************************************************************************/
-	// Purpose: to sort an integer array using merge sort
+	// Purpose: to sort an string array using merge sort
 
 	public static void merge_sort(String a[], int start, int end) {
 		if (start < end) {
@@ -600,7 +600,7 @@ public class AlgorithmUtility {
 
 	}
 	/************************************************************************************/
-	// Purpose: to sort an integer array using merge sort
+	// Purpose: to sort an String array using merge sort
 	
 	
 	public static void merge(String[] a, int start, int mid, int end) {
@@ -627,7 +627,7 @@ public class AlgorithmUtility {
 	}
 
 	/************************************************************************************/
-	// Purpose: to print the array which has been sorted by merge sort
+	// Purpose: to print the String array which has been sorted by merge sort
 	
 	
 	public static void print(String arr[]) {
