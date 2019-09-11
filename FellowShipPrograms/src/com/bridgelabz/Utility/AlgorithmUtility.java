@@ -13,8 +13,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class AlgorithmUtility {
-	
-	Scanner scanner=new Scanner(System.in);
+
+	Scanner scanner = new Scanner(System.in);
 
 	/****************************************************************************/
 
@@ -183,7 +183,7 @@ public class AlgorithmUtility {
 			key = arr[i];
 			j = i - 1;
 
-			while (j >=0 && arr[j] > key) {
+			while (j >= 0 && arr[j] > key) {
 				arr[j + 1] = arr[j];
 				j = j - 1;
 			}
@@ -304,11 +304,8 @@ public class AlgorithmUtility {
 		}
 	}
 
-	/*************************************************************************************
-	 * Purpose: to print on which day the particular date falls
-	 * 
-	 * @return
-	 */
+	/********************************************************************************/
+	// Purpose: to print on which day the particular date falls
 
 	public boolean DaysWeek(int date, int month, boolean LeapyearChecker) {
 
@@ -411,11 +408,8 @@ public class AlgorithmUtility {
 		return false;
 	}
 
-	/********************************************************************************************************
-	 * Purpose: formula to validate the day
-	 * 
-	 * @return
-	 */
+	/*************************************************************************************/
+	// Purpose: formula to validate the day
 
 	public static int DayValidate(int date, int month, int year) {
 
@@ -428,11 +422,11 @@ public class AlgorithmUtility {
 
 	}
 
-	/********************************************************************************************************
-	 * Purpose: to find the windchill temperature in farenheit
-	 * 
-	 * @return return wind chill temperature
-	 */
+	/********************************************************************************/
+	// Purpose: to find the windchill temperature in farenheit
+
+	// @return return wind chill temperature
+
 	public String tempconversion(double temperature, int choice) {
 		if (choice == 1) {
 			double CelsiustoFehranheit = (temperature * 9 / 5) + 32;
@@ -445,9 +439,8 @@ public class AlgorithmUtility {
 
 	}
 
-	/********************************************************************************************************
-	 * Purpose: to print the square root of a number
-	 */
+	/**********************************************************************************/
+	// Purpose: to print the square root of a number
 
 	public double Square(int c) {
 
@@ -462,7 +455,7 @@ public class AlgorithmUtility {
 
 	}
 
-	/*********************************************************************************************/
+	/******************************************************************************/
 	// Purpose: to find the elapsed time
 
 	private final long start;
@@ -477,77 +470,169 @@ public class AlgorithmUtility {
 		return (now - start) / 1000.0;
 	}
 
-	/**********************************************************************************************/
-	 //Purpose: to print the monthly payment
-	
+	/*****************************************************************************/
+	// Purpose: to print the monthly payment
+
 	public void Interest(double principal, double years, double rate) {
 		double payment;
-		double n=12*years;
-		double r=rate/(12*100);
-		
-		payment=principal*r/1-Math.pow(1-r, -n);
-		
-	  System.out.println("Monthly payment you have to make is : "+payment);
-		
-	}
-	
-	/**********************************************************************************************/
-	 //Purpose: to print the magic number 
-	
-	public void magic(int li,int hi,int mi) {
-		 while(li<hi) {
-	     	 System.out.println("if your number is between "+li+" to "+mi+" Press 1 ");
-	     	 System.out.println("if your number is between "+(mi+1)+" to "+hi+" Press 2");
-	         
-	     	 int uservalue =scanner.nextInt();
-	     	 if(uservalue==1) {
-	     	 
-	     		 hi=mi;
-	     		 mi=(li+hi)/2;
-	     	   
-	        	}
-	        	else if(uservalue==2) {
-	        		li=mi+1;
-	        		mi=(li+hi)/2;
-	        	}
-	        	else {
-	        		System.out.println("Wrong input ");
-	        	}
-	     	 }
-	        
-	        System.out.println("Your number is :"+mi);
-	}
-	
-	/********************************************************************************************************
-	   Purpose: to convert a decimal number into a binary number 
-	   */
-	 
-	 public void decimaltobinary(int num) {
-		 
-		 int rem [] = new int [num];
-		 
-		 int index =0;
-		 
-		 while(num>0) {
-			 rem[index]=num%2;
-			 index++;
-			 num=num/2;
-		 }
-		 
-		
-		
-		 for(int i=(index-1); i >=0 ; i--) {
-			 
-			 System.out.print(rem[i]);
-			 
-		 }
-		
-		 }
-	 
-	   public int swapnibble(int x) {
-		 return (((x&0x0F)<<4)|((x&0xF0)>>4));
-	 }
-	 
-	 
+		double n = 12 * years;
+		double r = rate / (12 * 100);
 
+		payment = principal * r / 1 - Math.pow(1 - r, -n);
+
+		System.out.println("Monthly payment you have to make is : " + payment);
+
+	}
+
+	/*****************************************************************************/
+	// Purpose: to print the magic number
+
+	public void magic(int li, int hi, int mi) {
+		while (li < hi) {
+			System.out.println("if your number is between " + li + " to " + mi + " Press 1 ");
+			System.out.println("if your number is between " + (mi + 1) + " to " + hi + " Press 2");
+
+			int uservalue = scanner.nextInt();
+			if (uservalue == 1) {
+
+				hi = mi;
+				mi = (li + hi) / 2;
+
+			} else if (uservalue == 2) {
+				li = mi + 1;
+				mi = (li + hi) / 2;
+			} else {
+				System.out.println("Wrong input ");
+			}
+		}
+
+		System.out.println("Your number is :" + mi);
+	}
+
+	/************************************************************************************/
+	// Purpose: to convert a decimal number into a binary number
+
+	public void decimaltobinary(int num) {
+
+		int rem[] = new int[num];
+
+		int index = 0;
+
+		while (num > 0) {
+			rem[index] = num % 2;
+			index++;
+			num = num / 2;
+		}
+
+		for (int i = (index - 1); i >= 0; i--) {
+
+			System.out.print(rem[i]);
+
+		}
+
+	}
+
+	public int swapnibble(int x) {
+		return (((x & 0x0F) << 4) | ((x & 0xF0) >> 4));
+	}
+
+	/************************************************************************************/
+	// Purpose: to sort an integer array using merge sort
+
+	public static void merge_sort(int a[], int start, int end) {
+		if (start < end) {
+			int mid = (start + end) / 2;
+			merge_sort(a, start, mid); // dividing the first half
+			merge_sort(a, mid + 1, end);// dividing the second half
+			merge(a, start, mid, end);
+
+		}
+
+	}
+	/************************************************************************************/
+	// Purpose: to sort an integer array using merge sort
+	
+	
+	public static void merge(int[] a, int start, int mid, int end) {
+		int p = start, q = mid + 1;
+		int arr[] = new int[end - start + 1];
+		int k = 0;
+		for (int i = start; i <= end; i++) {
+			// checks if first part comes to an end or not .
+			if (p > mid) {
+				arr[k++] = a[q++];
+				// checks if first part comes to an end or not .
+			} else if (q > end) {
+				arr[k++] = a[p++];
+				// checks which part has smaller element.
+			} else if (a[p] < a[q]) {
+				arr[k++] = a[p++];
+			} else {
+				arr[k++] = a[q++];
+			}
+		}
+		for (int m = 0; m < k; m++) {
+			a[start++] = arr[m];
+		}
+	}
+
+	/************************************************************************************/
+	// Purpose: to print the array which has been sorted by merge sort
+	
+	
+	public static void print(int arr[]) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	/************************************************************************************/
+	// Purpose: to sort an integer array using merge sort
+
+	public static void merge_sort(String a[], int start, int end) {
+		if (start < end) {
+			int mid = (start + end) / 2;
+			merge_sort(a, start, mid); // dividing the first half
+			merge_sort(a, mid + 1, end);// dividing the second half
+			merge(a, start, mid, end);
+
+		}
+
+	}
+	/************************************************************************************/
+	// Purpose: to sort an integer array using merge sort
+	
+	
+	public static void merge(String[] a, int start, int mid, int end) {
+		int p = start, q = mid + 1;
+		String arr[] = new String[end - start + 1];
+		int k = 0;
+		for (int i = start; i <= end; i++) {
+			// checks if first part comes to an end or not .
+			if (p > mid) {
+				arr[k++] = a[q++];
+				// checks if first part comes to an end or not .
+			} else if (q > end) {
+				arr[k++] = a[p++];
+				// checks which part has smaller element.
+			} else if (a[q].compareTo(a[p])>0) {
+				arr[k++] = a[p++];
+			} else {
+				arr[k++] = a[q++];
+			}
+		}
+		for (int m = 0; m < k; m++) {
+			a[start++] = arr[m];
+		}
+	}
+
+	/************************************************************************************/
+	// Purpose: to print the array which has been sorted by merge sort
+	
+	
+	public static void print(String arr[]) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
 }
