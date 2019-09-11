@@ -15,7 +15,7 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 		
-		int a[] = { 9, 7, 8, 3, 2, 1 };
+		int a[] = {8,3,5,1,6,7,2 };
 		int start = 0;
 		int end = a.length - 1;
 		AlgorithmUtility.merge_sort(a, start, end);

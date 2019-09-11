@@ -268,6 +268,10 @@ public class AlgorithmUtility {
 	/****************************************************************************/
 	// to clalcute the notes of n notes to be given to user
 
+	/**
+	 * @param money 
+	 * @param notes
+	 */
 	public void calculate(int money, int[] notes) {
 		int i = 0;
 		int rem;
@@ -287,13 +291,14 @@ public class AlgorithmUtility {
 	}
 
 	/******************************************************************************/
-	/*
-	 * Purpose: to Check the given year is a leap year or not
+	
+	 //Purpose: to Check the given year is a leap year or not
+	 
+	 /** @param year take input from user to check the leap year
 	 * 
-	 * @param year take input from user to check the leap year
-	 * 
-	 * @return return weather the given year is a leap year or not
+	 * @return r weather the given year is a leap year or not
 	 */
+	
 	public boolean LeapyearChecker(int year) {
 		if (year % 4 == 0 || year % 400 == 0 && year % 100 != 0) {
 			return true;
@@ -307,6 +312,12 @@ public class AlgorithmUtility {
 	/********************************************************************************/
 	// Purpose: to print on which day the particular date falls
 
+	/**
+	 * @param date
+	 * @param month
+	 * @param LeapyearChecker
+	 * @return true or false if date is valid or invalid
+	 */
 	public boolean DaysWeek(int date, int month, boolean LeapyearChecker) {
 
 		switch (month) {
@@ -411,6 +422,12 @@ public class AlgorithmUtility {
 	/*************************************************************************************/
 	// Purpose: formula to validate the day
 
+	/**
+	 * @param date 
+	 * @param month
+	 * @param year
+	 * @return the day on which the specific date falls
+	 */
 	public static int DayValidate(int date, int month, int year) {
 
 		int y1 = year - (14 - month) / 12;
@@ -439,9 +456,13 @@ public class AlgorithmUtility {
 
 	}
 
-	/**********************************************************************************/
+	/********************************************************************************/
 	// Purpose: to print the square root of a number
 
+	/**
+	 * @param c input value from the user
+	 * @return return the squareroot
+	 */
 	public double Square(int c) {
 
 		double t;
@@ -465,6 +486,9 @@ public class AlgorithmUtility {
 	}
 
 	// return the elapsed time
+	/**
+	 * @return the elapsed time
+	 */
 	public double elapsedTime() {
 		long now = System.currentTimeMillis();
 		return (now - start) / 1000.0;
@@ -473,6 +497,11 @@ public class AlgorithmUtility {
 	/*****************************************************************************/
 	// Purpose: to print the monthly payment
 
+	/**
+	 * @param principal amount taken by the customer
+	 * @param years   duration of amount taken
+	 * @param rate    of interest on principal amount
+	 */
 	public void Interest(double principal, double years, double rate) {
 		double payment;
 		double n = 12 * years;
@@ -487,6 +516,11 @@ public class AlgorithmUtility {
 	/*****************************************************************************/
 	// Purpose: to print the magic number
 
+	/**
+	 * @param li lowest index
+	 * @param hi highest index
+	 * @param mi middle index
+	 */
 	public void magic(int li, int hi, int mi) {
 		while (li < hi) {
 			System.out.println("if your number is between " + li + " to " + mi + " Press 1 ");
@@ -512,6 +546,9 @@ public class AlgorithmUtility {
 	/************************************************************************************/
 	// Purpose: to convert a decimal number into a binary number
 
+	/**
+	 * @param num input from user to convert it into binary number
+	 */
 	public void decimaltobinary(int num) {
 
 		int rem[] = new int[num];
@@ -539,6 +576,11 @@ public class AlgorithmUtility {
 	/************************************************************************************/
 	// Purpose: to sort an integer array using merge sort
 
+	/**
+	 * @param a integer array 
+	 * @param start lowest index of the array
+	 * @param end    highest index of the array
+	 */
 	public static void merge_sort(int a[], int start, int end) {
 		if (start < end) {
 			int mid = (start + end) / 2;
@@ -553,6 +595,12 @@ public class AlgorithmUtility {
 	// Purpose: to sort an integer array using merge sort
 	
 	
+	/**
+	 * @param a  integer array
+	 * @param start lowest index of array
+	 * @param mid   middle index of array
+	 * @param end   highest index of array
+	 */
 	public static void merge(int[] a, int start, int mid, int end) {
 		int p = start, q = mid + 1;
 		int arr[] = new int[end - start + 1];
@@ -580,6 +628,9 @@ public class AlgorithmUtility {
 	// Purpose: to print the array which has been sorted by merge sort
 	
 	
+	/**
+	 * @param arr integer array
+	 */
 	public static void print(int arr[]) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
@@ -589,6 +640,11 @@ public class AlgorithmUtility {
 	/************************************************************************************/
 	// Purpose: to sort an string array using merge sort
 
+	/**
+	 * @param a String array
+	 * @param start lowest index of  array
+	 * @param end    highest index of array
+	 */
 	public static void merge_sort(String a[], int start, int end) {
 		if (start < end) {
 			int mid = (start + end) / 2;
@@ -603,6 +659,12 @@ public class AlgorithmUtility {
 	// Purpose: to sort an String array using merge sort
 	
 	
+	/**
+	 * @param a  String array
+	 * @param start lowest index of array
+	 * @param mid   middle index of array
+	 * @param end   highest index of array
+	 */
 	public static void merge(String[] a, int start, int mid, int end) {
 		int p = start, q = mid + 1;
 		String arr[] = new String[end - start + 1];
@@ -630,6 +692,9 @@ public class AlgorithmUtility {
 	// Purpose: to print the String array which has been sorted by merge sort
 	
 	
+	/**
+	 * @param arr string array
+	 */
 	public static void print(String arr[]) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");

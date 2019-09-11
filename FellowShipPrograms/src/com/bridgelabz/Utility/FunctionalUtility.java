@@ -381,7 +381,7 @@ public class FunctionalUtility {
 	// Purpose: to permute the string 
 
 	public void permute(String str,int start, int size) {
-		if(size==start) {
+		if(start==size) {
 			System.out.println(str);
 		}
 		else {
