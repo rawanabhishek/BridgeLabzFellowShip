@@ -6,7 +6,7 @@
              fashion.
  *  @author  Abhishek Rawat
  *  @version 1.0
- *  @since   10-09-2019
+ *  @since   12-09-2019
  *
  ******************************************************************************/
 package com.bridgelabz.DataStructure;
@@ -23,7 +23,7 @@ public class ParenthesesStack {
 		
 
 		StackUtility<Character> utility=new StackUtility<Character>();
-		String str = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3";
+		String str = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)";
 		char[] stack = str.toCharArray();
 
 		for (int i = 0; i < stack.length; i++) {

@@ -1,3 +1,11 @@
+/******************************************************************************
+ 
+ *  Purpose:This is utility class for linked list
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   12-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.DatastructureUtility;
 
 public class LinkedListUtility<T> {

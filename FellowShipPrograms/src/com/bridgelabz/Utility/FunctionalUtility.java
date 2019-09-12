@@ -423,7 +423,7 @@ public class FunctionalUtility {
 	}
 
 	/*************************************************************************************************/
-	// Purpose: usert input
+	// Purpose: user input
 
 	
 
