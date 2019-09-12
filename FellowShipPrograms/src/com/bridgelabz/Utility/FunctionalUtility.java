@@ -425,38 +425,10 @@ public class FunctionalUtility {
 	/*************************************************************************************************/
 	// Purpose: usert input
 
-	public static int UserInput(String board[][], int count) {
-		if (count == 2 || count == 4 || count == 6 || count == 8) {
-			System.out.println("Enter your move : ");
-			int m1 = scanner.nextInt();
+	
 
-			if (m1 == 00 && board[0][0] == " - ") {
-				board[0][0] = " O ";
-
-			} else if (m1 == 01 && board[0][1] == " - ") {
-				board[0][1] = " O ";
-			} else if (m1 == 02 && board[0][2] == " - ") {
-				board[0][2] = " O ";
-			} else if (m1 == 10 && board[1][0] == " - ") {
-				board[1][0] = " O ";
-			} else if (m1 == 11 && board[1][1] == " - ") {
-				board[1][1] = " O ";
-			} else if (m1 == 12 && board[1][2] == " - ") {
-				board[1][2] = " O ";
-			} else if (m1 == 20 && board[2][0] == " - ") {
-				board[2][0] = " O ";
-			} else if (m1 == 21 && board[2][1] == " - ") {
-				board[2][1] = " O ";
-			} else if (m1 == 22 && board[2][2] == " - ") {
-				board[2][2] = " O ";
-
-			}
-			
-			
-
-		}
-		printboard(board);
-		return count++;
+	public static int Random9() {
+		return (int) (Math.random() * 9);
 	}
 	
 	
