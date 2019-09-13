@@ -8,24 +8,25 @@
  ******************************************************************************/
 package com.bridgelabz.DatastructureUtility;
 
-public class LinkedListUtility<T> {
-	Node<T> head;
+public class LinkedListUtility<Type> {
+	Node<Type> head;
 
+	@SuppressWarnings("hiding")
 	public class Node<Type> {
 		Type data;
 		Node<Type> next;
 	}
 
-	public void insert(T arr) {
+	public void insert(Type arr) {
 
-		Node<T> node = new Node<T>();
-		node.data = (T) arr;
+		Node<Type> node = new Node<Type>();
+		node.data = (Type) arr;
 		// node.data = (String) null;
 
 		if (head == null) {
 			head = node;
 		} else {
-			Node<T> n = head;
+			Node<Type> n = head;
 
 			while (n.next != null) {
 				n = n.next;
@@ -38,7 +39,7 @@ public class LinkedListUtility<T> {
 	public static String Write = " ";
 
 	public void show() {
-		Node<T> node = head;
+		Node<Type> node = head;
 		while (node.next != null) {
 			System.out.println(node.data);
 
@@ -50,7 +51,7 @@ public class LinkedListUtility<T> {
 	}
 
 	public void SaveToFile() {
-		Node<T> node = head;
+		Node<Type> node = head;
 		while (node.next != null) {
 
 			Write += " " + node.data;
@@ -66,8 +67,8 @@ public class LinkedListUtility<T> {
 		if (index == 0) {
 			head = head.next;
 		} else {
-			Node<T> n = head;
-			Node<T> n1 = null;
+			Node<Type> n = head;
+			Node<Type> n1 = null;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 
@@ -77,9 +78,9 @@ public class LinkedListUtility<T> {
 		}
 	}
 
-	public void insertAtstart(T data) {
-		Node<T> head = null;
-		Node<T> node = new Node<T>();
+	public void insertAtstart(Type data) {
+		Node<Type> head = null;
+		Node<Type> node = new Node<Type>();
 		node.data = data;
 		node.next = null;
 		node.next = head;
@@ -88,15 +89,15 @@ public class LinkedListUtility<T> {
 	}
 
 	//inserting the element at a specific position 
-		public void insertAt(int index, T data) {
-			Node<T> node = new Node<T>();
+		public void insertAt(int index, Type data) {
+			Node<Type> node = new Node<Type>();
 			node.data = data;
 			node.next = null;
 
 			if (index == 0) {
 				insertAtstart(data);
 			} else {
-				LinkedListUtility<T>.Node<T> n = head;
+				LinkedListUtility<Type>.Node<Type> n = head;
 				for (int i = 0; i < index - 1; i++) {
 					n = n.next;
 				}
@@ -107,18 +108,19 @@ public class LinkedListUtility<T> {
 	/****************************************************************************************************/
 
 	
-	public  void Sort(int size ) {
+	public     <T extends Comparable<T>>  void Sort(int size ) {
 		
 		
-		Node<T> n = head;
+		@SuppressWarnings("unchecked")
+		Node<T> n =  (Node<T>) head;
 		Node<T> n1 = n.next;
-	    T temp;
+	    T temp = null;
 
 		for (int i = 0; i < size-1 ; i++) {
 			
 			for (int j = 0; j <= (size - 1) - i - 1; j++) {
 			
-				if ((int)n.data >(int)n1.data) {
+				if (n.data.compareTo(n1.data)>0 ) {
 					temp = n.data;
 					n.data = n1.data;
 					n1.data = temp;
@@ -132,14 +134,16 @@ public class LinkedListUtility<T> {
 			n1 = n.next;
 
 		}
+		
+		
 
 	}
 
 	
 	//searching the value in the list
-	public int SearchByKey(T key ,int size) {
+	public int SearchByKey(Type key ,int size) {
      
-		Node<T> n = head;
+		Node<Type> n = head;
 		boolean isFound = false;
 
 		int count = -1;
