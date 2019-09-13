@@ -54,6 +54,8 @@ public class QueueUtility<T> {
 		return data;
 	}
 	
+	
+
 	//printing the whole queue
 	public void show() {
 		System.out.print("Element : ");

@@ -21,15 +21,20 @@ public class ParenthesesStack {
 
 	public static void main(String[] args) {
 		
-
+        //creating a generic type object of StackUtility
 		StackUtility<Character> utility=new StackUtility<Character>();
+		
+		
 		String str = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)";
 		char[] stack = str.toCharArray();
 
+		
+		//pusing the '(' from the string to the stack
 		for (int i = 0; i < stack.length; i++) {
 			if (stack[i] == '(') {
 				utility.push(stack[i]);
 			}
+		//poping the '(' from stack if  string element is ')'
 		else if (stack[i] == ')') {
 			 utility.pop();
 			}
@@ -42,9 +47,12 @@ public class ParenthesesStack {
 		}
 		System.out.println();
 
+		
+		//if stack is empty printing expression is balanced
 		if (StackUtility.isEmpty()) {
 			System.out.println("The given expression is balanced ");
 		}
+		
 		else {
 			System.out.println("The given expression is not balanced ");
 		}

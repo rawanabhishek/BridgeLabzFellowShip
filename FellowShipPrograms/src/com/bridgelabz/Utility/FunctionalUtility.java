@@ -380,6 +380,11 @@ public class FunctionalUtility {
 	/*************************************************************************************************/
 	// Purpose: to permute the string
 
+	/**
+	 * @param str  String from main class
+	 * @param start point 
+	 * @param size   of the string
+	 */
 	public void permute(String str, int start, int size) {
 		if (start == size) {
 			System.out.println(str);
@@ -393,6 +398,15 @@ public class FunctionalUtility {
 
 	}
 
+	/*************************************************************************************************/
+	// Purpose: to swap to character of a string
+	
+	/**
+	 * @param str  String from the class
+	 * @param i    first charatcer from string
+	 * @param j    second character from string
+	 * @return
+	 */
 	public String swap(String str, int i, int j) {
 		char temp;
 		char[] arr = str.toCharArray();
@@ -403,16 +417,14 @@ public class FunctionalUtility {
 		return String.valueOf(arr);
 	}
 
-	/*************************************************************************************************/
-	// Purpose: tic tac toe
-
-	public static int Random() {
-		return (int) (Math.random() * 4);
-	}
+	
 
 	/*************************************************************************************************/
-	// Purpose: tic tac toe
+	// Purpose: printing the tic tac toe board
 
+	/**
+	 * @param board printing the tic tac toe board
+	 */
 	public static void printboard(String board[][]) {
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
@@ -423,13 +435,13 @@ public class FunctionalUtility {
 	}
 
 	/*************************************************************************************************/
-	// Purpose: user input
+	// Purpose: generating 9 random values
 
-	
-
+	/**
+	 * @return a random value
+	 */
 	public static int Random9() {
 		return (int) (Math.random() * 9);
 	}
-	
-	
+
 }

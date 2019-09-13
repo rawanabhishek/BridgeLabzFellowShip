@@ -17,6 +17,7 @@ public class LinkedListUtility<Type> {
 		Node<Type> next;
 	}
 
+	//inserting the element at the start
 	public void insert(Type arr) {
 
 		Node<Type> node = new Node<Type>();
@@ -38,6 +39,8 @@ public class LinkedListUtility<Type> {
 
 	public static String Write = " ";
 
+	
+	//printing the linked list
 	public void show() {
 		Node<Type> node = head;
 		while (node.next != null) {
@@ -50,6 +53,8 @@ public class LinkedListUtility<Type> {
 
 	}
 
+	
+	//saving the linked list to Write String
 	public void SaveToFile() {
 		Node<Type> node = head;
 		while (node.next != null) {
@@ -62,6 +67,7 @@ public class LinkedListUtility<Type> {
 		Write += " " + node.data;
 	}
 
+	//deleting data from list at a specific position
 	public void deleteAt(int index) {
 
 		if (index == 0) {
@@ -78,6 +84,8 @@ public class LinkedListUtility<Type> {
 		}
 	}
 
+	
+	//inserting the element at the start of the list
 	public void insertAtstart(Type data) {
 		Node<Type> head = null;
 		Node<Type> node = new Node<Type>();
@@ -105,9 +113,9 @@ public class LinkedListUtility<Type> {
 				n.next = node;
 			}
 		}
-	/****************************************************************************************************/
-
 	
+
+	//sorting the linked list from ascending to descending order
 	public     <T extends Comparable<T>>  void Sort(int size ) {
 		
 		

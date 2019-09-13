@@ -12,6 +12,8 @@ public class StackUtility<T> {
 
 	 static Object stack[] =new  Object[20];
 	 static int top=-1;
+	 
+	 //pushing the element in the stack
 	 public void push(T data) {
 			if (isFull()) {
 				System.out.println("Stack is Full");
@@ -21,7 +23,7 @@ public class StackUtility<T> {
 
 		}
 
-		// checking weather the element is full or not
+	// checking weather the element is full or not
 	public	 boolean isFull() {
 			
 			if (top == stack.length - 1) {

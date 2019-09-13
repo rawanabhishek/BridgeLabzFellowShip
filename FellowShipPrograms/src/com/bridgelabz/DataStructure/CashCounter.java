@@ -21,8 +21,10 @@ public class CashCounter {
 		QueueUtility<Integer> utility=new QueueUtility<Integer>();
 		Scanner scanner = new Scanner(System.in);
 	
-
+        //opening balance of the bank
 		int balance = 50000;
+		
+		//equeueing the people in the queue
 		utility.enQueue(1);
 		utility.enQueue(2);
 		utility.enQueue(3);
@@ -30,10 +32,14 @@ public class CashCounter {
 		utility.enQueue(5);
 		
 
-		
+		//showing the queue by calling show method from utility class
 		utility.show();
+		
+		
 		System.out.println();
 		int i=0;
+		
+		//continuing the loop till queue is empty
 		while(utility.size!=0) {
 			
 			System.out.println();
@@ -41,6 +47,7 @@ public class CashCounter {
 			System.out.println("Enter 1 for widrawal\nEnter 2 for deposit ");
 			int userinput = scanner.nextInt();
 			switch (userinput) {
+			//if person wants to widraw money 
 			case 1:
 				
 				System.out.println("Enter the amount you want to widraw ");
@@ -56,6 +63,8 @@ public class CashCounter {
 					break;
 				}
 
+				
+			//if the person wants to deposit money	
 			case 2:
 				
 				System.out.println("Enter the amount you want to widraw ");
@@ -70,6 +79,8 @@ public class CashCounter {
 			if(utility.size!=0) {
 			utility.show();
 			}
+			
+			//if the queue is empty
 			else {
 				System.out.println("Queue is empty ");
 			}
