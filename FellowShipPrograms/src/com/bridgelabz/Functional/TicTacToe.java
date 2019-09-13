@@ -40,7 +40,7 @@ public class TicTacToe {
 		}
 
 		// printing the empty board
-		FunctionalUtility.printboard(board);
+		// FunctionalUtility.printboard(board);
 
 		// calling the move method recursively
 		if (move == "c") {
@@ -52,7 +52,16 @@ public class TicTacToe {
 			movemethod(move);
 
 		}
+		
+		if (winner == 1 && win.equals(" X ")) {
+			FunctionalUtility.printboard(board);
 
+			System.out.println("Winnner is " + win);
+		} else if (winner == 1) {
+			System.out.println("Winnner is  " + win);
+		} else {
+			System.out.println("its a draw");
+		}
 	}
 
 	// move method to to take move in the board
@@ -74,39 +83,39 @@ public class TicTacToe {
 						value = FunctionalUtility.Random9();
 
 						if (value == 0 && board[0][0] == " - ") {
-							System.out.println("Computer move  ");
+							System.out.println("----------------------------  ");
 							board[0][0] = " X ";
 
 						} else if (value == 1 && board[0][1] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[0][1] = " X ";
 
 						} else if (value == 2 && board[0][2] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[0][2] = " X ";
 
 						} else if (value == 3 && board[1][0] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("----------------------------");
 							board[1][0] = " X ";
 
 						} else if (value == 4 && board[1][1] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[1][1] = " X ";
 
 						} else if (value == 5 && board[1][2] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[1][2] = " X ";
 
 						} else if (value == 6 && board[2][0] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("----------------------------");
 							board[2][0] = " X ";
 
 						} else if (value == 7 && board[2][1] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[2][1] = " X ";
 
 						} else if (value == 8 && board[2][2] == " - ") {
-							System.out.println("Computer move ");
+							System.out.println("---------------------------- ");
 							board[2][2] = " X ";
 
 						} else {
@@ -117,24 +126,31 @@ public class TicTacToe {
 						count++;
 						move = "h";
 
-						FunctionalUtility.printboard(board);
 					}
 
-					// changing move to h as after computer move the move is of human
+				}
 
-				} else {
-					System.out.println("Winnner is " + win);
+				else {
+
 					winner = 1;
 					break;
 				}
+
 			}
 
 			// if the move is of human
-			else if (move == "h")
+			if (move == "h")
 
 			{
+
 				if (!won()) {
+					//FunctionalUtility.printboard(board);
 					if (count == 2 || count == 4 || count == 6 || count == 8) {
+						FunctionalUtility.printboard(board);
+
+						move = "c";
+
+						count++;
 						System.out.println("Enter your move : ");
 						int m1 = scanner.nextInt();
 
@@ -166,29 +182,29 @@ public class TicTacToe {
 							board[2][2] = " O ";
 
 						}
-						
 
 						// changing move to c as after human move the move is of computer
-						move = "c";
 						FunctionalUtility.printboard(board);
-						count++;
 
 					}
-					
-				} 
-				else {
-					System.out.println("Winnner is " + win);
+
+				} else {
+
 					winner = 1;
 					break;
 				}
-			}else if (count > 9) {
-				System.out.println("Its a draw ");
-				break;
-			}
 
-			
 			}
-		
+			
+
+		}
+
+//		if (count > 7) {
+//			System.out.println("Its a draw ");
+//			//winner = 1;
+//			
+//		}
+
 	}
 
 //winning method to check the who is winner 
