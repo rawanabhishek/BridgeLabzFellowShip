@@ -1,104 +1,91 @@
-
 /******************************************************************************
  
- *  Purpose: program Calendar.java that takes the month and year as command­line
-             arguments and prints the Calendar of the month. Store the Calendar in an 2D Array,
-             the first dimension the week of the month and the second dimension stores the day
-of the week.
+ *  Purpose: Create the Week Object having a list of WeekDay objects each 
+ *           storing the day (i.e S,M,T,W,Th,..) and the Date (1,2,3..) . 
+ *           The WeekDay objects are stored in a Queue implemented using 
+ *           Linked List. Further maintain also a Week Object in a Queue to
+             finally display the Calendar 
  *  @author  Abhishek Rawat
  *  @version 1.0
- *  @since   13-09-2019
+ *  @since   14-09-2019
  *
  ******************************************************************************/
 package com.bridgelabz.DataStructure;
 
 import java.util.Scanner;
 
+import com.bridgelabz.Handler.LinkedList;
 import com.bridgelabz.Utility.AlgorithmUtility;
 import com.bridgelabz.Utility.FunctionalUtility;
 
-public class Calander {
+public class CalanderQueue {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		LinkedList<Integer> utility = new LinkedList<Integer>();
 		FunctionalUtility utility2 = new FunctionalUtility();
 		System.out.println("Enter the Month : ");
 		int month = scanner.nextInt();
 
 		System.out.println("Enter the year : ");
 		int year = scanner.nextInt();
-		String calender[][] = new String[6][7];
+		int calender[][] = new int[6][7];
 
 		//array of string to store months 
 		String[] months = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
 
-		//array of integer  to store max limit of months 
+		//array of integer  to store max limit of months
 		int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 		//if the entered year is a leap year then the max limit of feb gets changed
 		if (month == 2 && utility2.Leapyear(year))
 			days[month] = 29;
-
+		
 		//get day value on which day the particular months start
 		int day = AlgorithmUtility.DayValidate(1, month, year);
+		System.out.println("    " + months[month] + " " + year);
+		System.out.println("Sun Mon Tue Wed Thu Fri Sat");
 
-		int tempDay = 0;
+		
+		int count = 1;
 		//storing the dates in a 2D Array of String
 		for (int i = 0; i < calender.length; i++) {
-			for (int j = 0; j < calender[i].length; j++) {
-				if (days[month] > tempDay) {
-					tempDay++;
+			for (int j = day; j < calender[i].length; j++) {
 
-					if (tempDay < 10) {
-
-						calender[i][j] = "  " + tempDay + " ";
-					} else {
-
-						calender[i][j] = " " + tempDay + " ";
-					}
+				if (count <= days[month]) {
+					calender[i][j] = count;
+					//inserting the values in the queue 
+					utility.insert(calender[i][j]);
+					count++;
 				} else {
 					break;
 				}
 			}
+			day = 0;
 		}
-		
-		System.out.println("    " + months[month] + " " + year);
-		System.out.println(" Su  Mo  Tu  We  Th  Fi  Sa");
-
-		for (int i = 0; i < day; i++) {
-			System.out.print("    ");
-		}
-		tempDay = 0;
 
 		//printing the 2D Array value
 		for (int i = 0; i < calender.length; i++) {
 			for (int j = 0; j < calender[i].length; j++) {
-				
-				if (days[month] != tempDay) {
-					tempDay++;
-					//printing the array on next line if it reminder is 0 when dvivided by 7
-					if ((j + day) % 7 == 0) {
 
-						System.out.println();
-
-					}
-
-					if (tempDay < 10) {
-						System.out.print(calender[i][j]);
-
-					} else {
-						System.out.print(calender[i][j]);
-
-					}
+				if (calender[i][j] == 0) {
+					System.out.print("    ");
+				} else if (calender[i][j] < 10) {
+					//dequeuing the value from queue and storing it
+					int dayss = utility.deQueueFromStart();
+					System.out.print("  " + dayss + " ");
 				} else {
-					break;
+					//dequeuing the value from queue and storing it
+					int dayss = utility.deQueueFromStart();
+					System.out.print(" " + dayss + " ");
 				}
+
 			}
+			System.out.println();
 		}
-		
+
 		scanner.close();
-		System.out.println();
 	}
 
 }

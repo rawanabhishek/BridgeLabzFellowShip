@@ -1,14 +1,14 @@
 /******************************************************************************
  
- *  Purpose:This is utility class for linked list
+ *  Purpose:This is handler utility for linklist
  *  @author  Abhishek Rawat
  *  @version 1.0
  *  @since   12-09-2019
  *
  ******************************************************************************/
-package com.bridgelabz.DatastructureUtility;
+package com.bridgelabz.Handler;
 
-public class LinkedListUtility<Type> {
+public class LinkedList<Type> {
 	Node<Type> head;
 
 	@SuppressWarnings("hiding")
@@ -17,7 +17,7 @@ public class LinkedListUtility<Type> {
 		Node<Type> next;
 	}
 
-	//inserting the element at the start
+	// inserting the element at the start
 	public void insert(Type arr) {
 
 		Node<Type> node = new Node<Type>();
@@ -39,8 +39,7 @@ public class LinkedListUtility<Type> {
 
 	public static String Write = " ";
 
-	
-	//printing the linked list
+	// printing the linked list
 	public void show() {
 		Node<Type> node = head;
 		while (node.next != null) {
@@ -53,8 +52,7 @@ public class LinkedListUtility<Type> {
 
 	}
 
-	
-	//saving the linked list to Write String
+	// saving the linked list to Write String
 	public void SaveToFile() {
 		Node<Type> node = head;
 		while (node.next != null) {
@@ -67,9 +65,10 @@ public class LinkedListUtility<Type> {
 		Write += " " + node.data;
 	}
 
-	//deleting data from list at a specific position
-	public void deleteAt(int index) {
-
+	// deleting data from list at a specific position
+	@SuppressWarnings("unchecked")
+	public <T> T deleteAt(int index) {
+      T temp=null;
 		if (index == 0) {
 			head = head.next;
 		} else {
@@ -77,15 +76,56 @@ public class LinkedListUtility<Type> {
 			Node<Type> n1 = null;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
+				temp=(T) n.data;
 
 			}
 			n1 = n.next;
 			n.next = n1.next;
+
 		}
+		return temp;
 	}
 
-	
-	//inserting the element at the start of the list
+	// deleting data from list at satrt
+	public void deleteAtStart() {
+		head = head.next;
+
+	}
+
+	// deleting data from list at satrt
+	public <T> T deQueueFromStart() {
+
+		@SuppressWarnings("unchecked")
+		T temp = (T) head.data;
+
+		head = head.next;
+		return (T) temp;
+	}
+
+	// deleting data from list at satrt
+	@SuppressWarnings("unchecked")
+	public <T> T deQueueFromEnd() {
+
+		T temp = null;
+		
+		while (head.next == null) {
+			head = head.next;
+			temp = (T) head.data;
+			
+		}
+		return (T) temp;
+	}
+
+	// checking the list is empty or not
+	public boolean isEmpty() {
+
+		if (head == null) {
+			return true;
+		}
+		return false;
+	}
+
+	// inserting the element at the start of the list
 	public void insertAtstart(Type data) {
 		Node<Type> head = null;
 		Node<Type> node = new Node<Type>();
@@ -96,43 +136,40 @@ public class LinkedListUtility<Type> {
 
 	}
 
-	//inserting the element at a specific position 
-		public void insertAt(int index, Type data) {
-			Node<Type> node = new Node<Type>();
-			node.data = data;
-			node.next = null;
+	// inserting the element at a specific position
+	public void insertAt(int index, Type data) {
+		Node<Type> node = new Node<Type>();
+		node.data = data;
+		node.next = null;
 
-			if (index == 0) {
-				insertAtstart(data);
-			} else {
-				LinkedListUtility<Type>.Node<Type> n = head;
-				for (int i = 0; i < index - 1; i++) {
-					n = n.next;
-				}
-				node.next = n.next;
-				n.next = node;
+		if (index == 0) {
+			insertAtstart(data);
+		} else {
+			LinkedList<Type>.Node<Type> n = head;
+			for (int i = 0; i < index - 1; i++) {
+				n = n.next;
 			}
+			node.next = n.next;
+			n.next = node;
 		}
-	
+	}
 
-	//sorting the linked list from ascending to descending order
-	public     <T extends Comparable<T>>  void Sort(int size ) {
-		
-		
+	// sorting the linked list from ascending to descending order
+	public <T extends Comparable<T>> void Sort(int size) {
+
 		@SuppressWarnings("unchecked")
-		Node<T> n =  (Node<T>) head;
+		Node<T> n = (Node<T>) head;
 		Node<T> n1 = n.next;
-	    T temp = null;
+		T temp = null;
 
-		for (int i = 0; i < size-1 ; i++) {
-			
+		for (int i = 0; i < size - 1; i++) {
+
 			for (int j = 0; j <= (size - 1) - i - 1; j++) {
-			
-				if (n.data.compareTo(n1.data)>0 ) {
+
+				if (n.data.compareTo(n1.data) > 0) {
 					temp = n.data;
 					n.data = n1.data;
 					n1.data = temp;
-					
 
 				}
 				n1 = n1.next;
@@ -142,15 +179,12 @@ public class LinkedListUtility<Type> {
 			n1 = n.next;
 
 		}
-		
-		
 
 	}
 
-	
-	//searching the value in the list
-	public int SearchByKey(Type key ,int size) {
-     
+	// searching the value in the list
+	public int SearchByKey(Type key, int size) {
+
 		Node<Type> n = head;
 		boolean isFound = false;
 
@@ -182,6 +216,18 @@ public class LinkedListUtility<Type> {
 			insertAt(count, key);
 		}
 		return size;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T> T getData(int index) {
+		Node<Type> n = head;
+
+		for (int i = 0; i < index - 1; i++) {
+			n = n.next;
+
+		}
+
+		return (T) n.data;
 	}
 
 }

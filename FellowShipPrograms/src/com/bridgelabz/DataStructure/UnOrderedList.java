@@ -20,12 +20,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.bridgelabz.DatastructureUtility.LinkedListUtility;
+import com.bridgelabz.Handler.LinkedList;
 
 public class UnOrderedList {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		LinkedListUtility<String> utility = new LinkedListUtility<String>();
+		LinkedList<String> utility = new LinkedList<String>();
         Scanner scanner = new Scanner(System.in);
 		// Reading the string from the file
 		BufferedReader br = new BufferedReader(new FileReader(
@@ -83,7 +83,7 @@ public class UnOrderedList {
 		scanner.close();
 		
 		
-		String strWrite=LinkedListUtility.Write;
+		String strWrite=LinkedList.Write;
 		//writing the update list to the file 
 		try {
 			File file=new File("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/TextFiles/unorderedlistoutput");

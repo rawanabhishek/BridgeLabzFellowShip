@@ -11,15 +11,16 @@ package com.bridgelabz.DataStructure;
 
 import java.util.Arrays;
 
-import com.bridgelabz.DatastructureUtility.QueueUtility;
+import com.bridgelabz.Handler.QueueLinkedList;
+
 
 public class PalindromeChecker {
 
 	public static void main(String[] args) {
-		QueueUtility<Character> utility = new QueueUtility<Character>();
 		
+		QueueLinkedList<Character> utility2= new QueueLinkedList<Character>();
 		//string to check it is palindrom or not
-		String str = "radar";
+		String str = "rada";
 		
 		//converting the above to character array
 		char[] arr = str.toCharArray();
@@ -31,24 +32,33 @@ public class PalindromeChecker {
 		
 		//enquing the arr[] data
  		for (int i = 0; i < arr.length; i++) {
-			utility.enQueue(arr[i]);
+			utility2.addRear(arr[i]);
 		}
 
  		//dequeuing the arr[] from front 
 		for (int i = 0; i < arr.length; i++) {
 
-			str1[i] = utility.deQueue();
+			str1[i] = (char) utility2.removeFront();
 		}
 		
 		//enquing the arr[] data again
 		for (int i = 0; i < arr.length; i++) {
-			utility.enQueue(arr[i]);
+			utility2.addRear(arr[i]);
+		}
+	
+		//dequeing the arr[] from back
+		for (int i = 0; i<arr.length; i++) {
+			str2[i]=utility2.removeRear();
+			
+			
 		}
 		
-		//dequeing the arr[] from back
-		for (int i = arr.length-1; i >=0; i--) {
-
-			str2[i] = utility.deQueue();
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(str1[i]+" ");
+		}
+		System.out.println();
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(str2[i]+" ");
 		}
 		
 		//comparing str1 and str2 array and priting it is palindrome or not

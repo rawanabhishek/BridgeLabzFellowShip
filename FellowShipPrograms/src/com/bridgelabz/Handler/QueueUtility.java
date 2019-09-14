@@ -1,12 +1,12 @@
 /******************************************************************************
  
- *  Purpose:This is utility class for Queue
+ *  Purpose:This is handler utility class for Queue
  *  @author  Abhishek Rawat
  *  @version 1.0
  *  @since   13-09-2019
  *
  ******************************************************************************/
-package com.bridgelabz.DatastructureUtility;
+package com.bridgelabz.Handler;
 
 public class QueueUtility<T> {
 	public Object q[] = new Object[5];

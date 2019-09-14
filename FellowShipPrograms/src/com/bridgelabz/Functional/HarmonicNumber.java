@@ -19,9 +19,9 @@ public class HarmonicNumber {
 	public static void main(String[] args) {
 		FunctionalUtility utility = new FunctionalUtility();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter a value for command line argument : ");
+		//System.out.println("Enter a value for command line argument : ");
 
-		int n = scanner.nextInt();
+		int n = Integer.parseInt(args[0]);
 
 		utility.Harmonic(n);
 		

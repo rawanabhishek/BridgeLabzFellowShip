@@ -39,8 +39,7 @@ public class TicTacToe {
 
 		}
 
-		// printing the empty board
-		// FunctionalUtility.printboard(board);
+		
 
 		// calling the move method recursively
 		if (move == "c") {
@@ -53,6 +52,7 @@ public class TicTacToe {
 
 		}
 		
+		//printing the result
 		if (winner == 1 && win.equals(" X ")) {
 			FunctionalUtility.printboard(board);
 
@@ -71,7 +71,7 @@ public class TicTacToe {
 		 * every move till winner is optined
 		 */
 
-		// int collect = 0;
+	
 		while (count <= 9 && winner == 0) {
 
 			if (move == "c") {
@@ -199,18 +199,14 @@ public class TicTacToe {
 
 		}
 
-//		if (count > 7) {
-//			System.out.println("Its a draw ");
-//			//winner = 1;
-//			
-//		}
+
 
 	}
 
 //winning method to check the who is winner 
 	public static boolean won() {
 		boolean won = false;
-//
+
 		if (board[0][0] == " O " && board[0][1] == " O " && board[0][2] == " O ") {
 			won = true;
 			win = " O ";

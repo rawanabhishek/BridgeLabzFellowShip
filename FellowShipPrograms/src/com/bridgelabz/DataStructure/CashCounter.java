@@ -5,31 +5,32 @@
             to Queue to either deposit or withdraw money and dequeue the people. Maintain
             the Cash Balance.
  *  @author  Abhishek Rawat
- *  @version 1.0
- *  @since   13-09-2019
+ *  @version 1.1
+ *  @since   14-09-2019
  *
  ******************************************************************************/
 package com.bridgelabz.DataStructure;
 
 import java.util.Scanner;
 
-import com.bridgelabz.DatastructureUtility.QueueUtility;
+import com.bridgelabz.Handler.LinkedList;
+
 
 public class CashCounter {
 	
 	public static void main(String[] args) {
-		QueueUtility<Integer> utility=new QueueUtility<Integer>();
+		LinkedList<Integer> utility=new LinkedList<Integer>();
 		Scanner scanner = new Scanner(System.in);
 	
         //opening balance of the bank
 		int balance = 50000;
 		
 		//equeueing the people in the queue
-		utility.enQueue(1);
-		utility.enQueue(2);
-		utility.enQueue(3);
-		utility.enQueue(4);
-		utility.enQueue(5);
+		utility.insert(1);
+		utility.insert(2);
+		utility.insert(3);
+		utility.insert(4);
+		utility.insert(5);
 		
 
 		//showing the queue by calling show method from utility class
@@ -40,10 +41,10 @@ public class CashCounter {
 		int i=0;
 		
 		//continuing the loop till queue is empty
-		while(utility.size!=0) {
+		while(!(utility.isEmpty())) {
 			
 			System.out.println();
-			System.out.println("Hello  "+utility.q[i]);
+			System.out.println("Hello  "+(i+1));
 			System.out.println("Enter 1 for widrawal\nEnter 2 for deposit ");
 			int userinput = scanner.nextInt();
 			switch (userinput) {
@@ -54,12 +55,12 @@ public class CashCounter {
 				int widAmount = scanner.nextInt();
 				if (widAmount <= balance) {
 					balance = balance - widAmount;
-					utility.deQueue();
+					utility.deleteAtStart();
 					break;
 
 				} else {
 					System.out.println("bank does not have that much amount ");
-					utility.deQueue();
+					utility.deleteAtStart();
 					break;
 				}
 
@@ -70,13 +71,13 @@ public class CashCounter {
 				System.out.println("Enter the amount you want to widraw ");
 				int depAmount = scanner.nextInt();
 				balance = balance + depAmount;
-				utility.deQueue();
+				utility.deleteAtStart();
 				break;
 
 			}
 			System.out.println("The balance is "+balance);
 			
-			if(utility.size!=0) {
+			if(!utility.isEmpty()) {
 			utility.show();
 			}
 			

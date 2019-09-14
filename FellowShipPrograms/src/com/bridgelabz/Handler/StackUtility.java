@@ -1,12 +1,12 @@
 /******************************************************************************
  
- *  Purpose: this a utility class for stack implementation 
+ *  Purpose: this is a handler utility class for stack implementation 
  *  @author  Abhishek Rawat
  *  @version 1.0
  *  @since   12-09-2019
  *
  ******************************************************************************/
-package com.bridgelabz.DatastructureUtility;
+package com.bridgelabz.Handler;
 
 public class StackUtility<T> {
 

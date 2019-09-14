@@ -18,14 +18,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.bridgelabz.DatastructureUtility.LinkedListUtility;
+import com.bridgelabz.Handler.LinkedList;
 
 public class OrderedList {
 
 	public static int size;
 	public static void main(String[] args) throws IOException {
 
-		LinkedListUtility<Integer> utility = new LinkedListUtility<Integer>();
+		LinkedList<Integer> utility = new LinkedList<Integer>();
 
 		Scanner scanner = new Scanner(System.in);
 		// Reading the string from the file
@@ -70,7 +70,7 @@ public class OrderedList {
 		utility.show();
 		utility.SaveToFile();
 		
-		String strWrite=LinkedListUtility.Write;
+		String strWrite=LinkedList.Write;
 		//writing to the output file 
 		try {
 			File file=new File("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/TextFiles/orderedlistoutput");
