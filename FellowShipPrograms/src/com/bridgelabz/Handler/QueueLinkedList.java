@@ -168,5 +168,9 @@ public class QueueLinkedList<T> {
 		}
 		System.out.println();
 	}
+	
+	public int sizeQueue() {
+		return size;
+	}
 
 }

@@ -20,13 +20,16 @@ public class PrimeAnagram2DArray {
 		int end = 100;
 		int[][] arr = new int[10][];
 
-		// checking i is prime or not and returing true or flase
+		
 		int j1 = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = start; j < end; j++) {
+				// checking j is prime or not and returning true or flase
 				if (utility.PrimeChecker(j)) {
 					for (int k = j + 1; k < end; k++) {
+						// checking k is prime or not and returning true or flase
 						if (utility.PrimeChecker(k)) {
+							// checking j & k is anagram or not and returning true or flase
 							if (utility.Anagram(String.valueOf(j), String.valueOf(k))) {
 								j1 += 2;
 							}
@@ -46,9 +49,12 @@ public class PrimeAnagram2DArray {
 		end = 100;
 		for (int i = 0; i < 10; i++) {
 			for (int j = start; j < end; j++) {
+				// checking j is prime or not and returning true or flase
 				if (utility.PrimeChecker(j)) {
 					for (int k = j + 1; k < end; k++) {
+						// checking j is prime or not and returning true or flase
 						if (utility.PrimeChecker(k)) {
+							// checking j & k is anagram or not and returning true or flase
 							if (utility.Anagram(String.valueOf(j), String.valueOf(k))) {
 
 								arr[i][j1] = j;
@@ -65,7 +71,9 @@ public class PrimeAnagram2DArray {
 
 		}
 		System.out.println("The prime anagram are ");
+		
 		System.out.println();
+		//printing the 2D array of prime and anagram
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 				System.out.print(arr[i][j] + " ");

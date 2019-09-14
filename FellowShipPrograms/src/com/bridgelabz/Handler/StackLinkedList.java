@@ -8,11 +8,9 @@
  ******************************************************************************/
 package com.bridgelabz.Handler;
 
-
-
 public class StackLinkedList<T> {
 	Node<T> head;
-	int top = -1;
+	public int top = -1;
 
 	@SuppressWarnings("hiding")
 	class Node<T> {
@@ -25,7 +23,7 @@ public class StackLinkedList<T> {
 		}
 	}
 
-	//pushing the element in the stack
+	// pushing the element in the stack
 	public void push(T data) {
 		Node<T> node = new Node<T>(data);
 		if (head == null) {
@@ -42,41 +40,70 @@ public class StackLinkedList<T> {
 
 	}
 
-	//poping the element from the stack
+	// poping the element from the stack
 	@SuppressWarnings("unchecked")
 	public T pop() {
 		Node<T> node = head;
-		if(head == null)
-		{
+		if (head == null) {
 			return (T) "Nothing to be returned";
-		}
-		else
-		{
-			if(node.next == null)
-			{
+		} else {
+			if (node.next == null) {
 				head = null;
 				top--;
-				
+
 				return (T) node.data;
-			}
-			else 
-			{
-				while(node.next.next != null)
-				{
+			} else {
+				while (node.next.next != null) {
 					node = node.next;
 				}
 				Object temp = node.next.data;
-				node.next =null;
+				node.next = null;
 				top--;
-				
-				return (T) temp;	
-			}}
+
+				return (T) temp;
+			}
+		}
 	}
 
-	
-	//checking weather the stack is empty or not 
+	// checking weather the stack is empty or not
 	public boolean isEmpty() {
 		return top == -1;
+	}
+
+	// showing the stack
+	public String show() {
+		if (isEmpty()) {
+			System.out.println("Stack is Underflow ");
+		} else {
+
+			for (int i = top; i >= 0; i--) {
+
+				System.out.println(top + " ");
+
+			}
+
+		}
+		return null;
+
+	}
+
+	//returing the stack size
+	public int sizeStack() {
+		return top;
+	}
+
+	//returing the peek element 
+	public T peek() {
+		if (!isEmpty()) {
+			Node<T> n = head;
+			while (n.next != null) {
+				n = n.next;
+
+			}
+			return (T) n.data;
+		}
+		return null;
+		
 	}
 
 }

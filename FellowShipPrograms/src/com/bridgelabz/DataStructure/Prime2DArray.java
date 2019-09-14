@@ -21,10 +21,11 @@ public class Prime2DArray {
 		int end = 100;
 		int[][] arr = new int[10][];
 
-		// checking i is prime or not and returing true or flase
+		
 		int j1 = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = start; j < end; j++) {
+				// checking j is prime or not and returning true or flase
 				if (utility.PrimeChecker(j)) {
 					j1++;
 				}
@@ -41,6 +42,7 @@ public class Prime2DArray {
 		end = 100;
 		for (int i = 0; i < 10; i++) {
 			for (int j = start; j < end; j++) {
+				// checking j is prime or not and returning true or flase
 				if (utility.PrimeChecker(j)) {
 					arr[i][j1] = j;
 					j1++;
@@ -52,6 +54,7 @@ public class Prime2DArray {
 			j1 = 0;
 
 		}
+		//printing the 2D array of prime
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 				System.out.print(arr[i][j] + " ");

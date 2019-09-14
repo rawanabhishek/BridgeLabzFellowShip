@@ -22,8 +22,8 @@ public class CalanderStack {
 		Scanner scanner = new Scanner(System.in);
 		LinkedList<Integer> utility = new LinkedList<Integer>();
 		FunctionalUtility utility2 = new FunctionalUtility();
-		StackLinkedList<Integer>utility3=new StackLinkedList<Integer>();
-		StackLinkedList<Integer>utility4=new StackLinkedList<Integer>();
+		StackLinkedList<Integer>stack1=new StackLinkedList<Integer>();
+		StackLinkedList<Integer>stack2=new StackLinkedList<Integer>();
 		System.out.println("Enter the Month : ");
 		int month = scanner.nextInt();
 
@@ -70,10 +70,12 @@ public class CalanderStack {
 			day = 0;
 		}
 		for(int i=0;i<days[month];i++) {
-			utility3.push(utility.deQueueFromStart());
+			//removing the element from queue and pushing it to stack 1 
+			stack1.push(utility.deQueueFromStart());
 		}
 		for(int i=0;i<days[month];i++) {
-			utility4.push(utility3.pop());
+			//removing the elements from stack 1 and pushing it to stack 2
+			stack2.push(stack1.pop());
 		}
 		
 		
@@ -90,12 +92,15 @@ public class CalanderStack {
 				}
 				else if(calender[i][j] < 10)
 				{
-					int daysss =(int) utility4.pop();
+					//poping the element from the stack2
+					int daysss =(int) stack2.pop();
+				
 					System.out.print("  "+daysss+" ");
 				}
 				else 
 				{
-					int daysss =(int) utility4.pop();
+					//poping the element from the stack2
+					int daysss =(int) stack2.pop();
 					System.out.print(" "+daysss+" ");
 				}
 			}
