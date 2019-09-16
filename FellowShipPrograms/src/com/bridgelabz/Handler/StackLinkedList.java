@@ -78,6 +78,7 @@ public class StackLinkedList<T> {
 
 			for (int i = top; i >= 0; i--) {
 
+				
 				System.out.println(top + " ");
 
 			}

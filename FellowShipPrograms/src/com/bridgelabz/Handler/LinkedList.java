@@ -18,10 +18,10 @@ public class LinkedList<Type> {
 	}
 
 	// inserting the element at the start
-	public void insert(Type arr) {
+	public void insert(Object object) {
 
 		Node<Type> node = new Node<Type>();
-		node.data = (Type) arr;
+		node.data = (Type) object;
 		// node.data = (String) null;
 
 		if (head == null) {
@@ -43,12 +43,12 @@ public class LinkedList<Type> {
 	public void show() {
 		Node<Type> node = head;
 		while (node.next != null) {
-			System.out.println(node.data);
+			System.out.print(node.data+ " ");
 
 			node = node.next;
 
 		}
-		System.out.println(node.data);
+		System.out.print(node.data);
 
 	}
 
@@ -224,10 +224,14 @@ public class LinkedList<Type> {
 
 		for (int i = 0; i < index - 1; i++) {
 			n = n.next;
-
+		
+		
 		}
 
-		return (T) n.data;
+		return (T)n.data;
 	}
 
+	
+	
+	
 }
