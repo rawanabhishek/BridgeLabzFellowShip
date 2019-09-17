@@ -1,16 +1,15 @@
 package com.bridgelabz.DataStructure;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import com.bridgelabz.Handler.LinkedList;
 
 public class HashSlot {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws Exception {
 		LinkedList<LinkedList<Integer>> list = new LinkedList<LinkedList<Integer>>();
 		LinkedList<Integer> list0 = new LinkedList<Integer>();
 		LinkedList<Integer> list1 = new LinkedList<Integer>();
@@ -22,6 +21,7 @@ public class HashSlot {
 		LinkedList<Integer> list7 = new LinkedList<Integer>();
 		LinkedList<Integer> list8 = new LinkedList<Integer>();
 		LinkedList<Integer> list9 = new LinkedList<Integer>();
+		LinkedList<Integer> list10 = new LinkedList<Integer>();
 		BufferedReader br = new BufferedReader(new FileReader(
 				"/home/admin1/FellowShip/FellowShipPrograms" + "/src/com/bridgelabz/" + "TextFiles/hashslotinput"));
 
@@ -34,6 +34,7 @@ public class HashSlot {
 			e.fillInStackTrace();
 
 		}
+		br.close();
 
 		String strArray[] = str.split(",");
 
@@ -48,36 +49,44 @@ public class HashSlot {
 
 		System.out.println();
 
-		int capacity = 10;
-
-	
-
 		System.out.println();
 		for (int i = 0; i < arr.length; i++) {
 			@SuppressWarnings("deprecation")
 			Integer temp = new Integer(arr[i]);
-			int index = arr[i] % 10;
+			int index = arr[i] % 11;
 			if (index == 0) {
 				list0.insert(temp);
-				System.out.println(arr[i]);
+
 			} else if (index == 1) {
 				list1.insert(temp);
+
 			} else if (index == 2) {
 				list2.insert(temp);
+
 			} else if (index == 3) {
 				list3.insert(temp);
+				list3.show();
 			} else if (index == 4) {
-				list4.insert(arr[i]);
+				list4.insert(temp);
+
 			} else if (index == 5) {
-				list5.insert(arr[i]);
+				list5.insert(temp);
+
 			} else if (index == 6) {
-				list6.insert(arr[i]);
+				list6.insert(temp);
+
 			} else if (index == 7) {
-				list7.insert(arr[i]);
+				list7.insert(temp);
+
 			} else if (index == 8) {
-				list8.insert(arr[i]);
+				list8.insert(temp);
+
 			} else if (index == 9) {
-				list9.insert(arr[i]);
+				list9.insert(temp);
+
+			} else if (index == 10) {
+				list10.insert(temp);
+
 			}
 
 		}
@@ -91,16 +100,20 @@ public class HashSlot {
 		list.insert(list7);
 		list.insert(list8);
 		list.insert(list9);
+		list.insert(list10);
 
-		for (int i = 0; i < arr.length; i++) {
-			 // list.getData(i)
+		System.out.println();
+		for (int i = 0; i < list.getSize(); i++) {
+			// list.getData(i)
 			LinkedList<Integer> temp = list.getData(i);
-			for (int j = 0; j < arr.length; j++) {
-			System.out.println("zdasas "+temp.getData(j));
+			if (list.getData(i) != null) {
+				for (int j = 0; j <list.getSize(); j++) {
+					if (temp.getData(j) != null) {
+						System.out.print(" " + temp.getData(j));
+					}
+				}
 			}
-			//System.out.println("zdasas "+ Integer.toHexString(System.identityHashCode(list.getData(i))));
 
 		}
-
 	}
 }

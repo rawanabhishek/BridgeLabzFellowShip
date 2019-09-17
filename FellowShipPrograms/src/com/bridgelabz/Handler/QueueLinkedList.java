@@ -117,12 +117,12 @@ public class QueueLinkedList<T> {
 				
 				return (T) node.data;
 			}
-			else 
-			{
-				while(node.next.next != null)
-				{
-					node = node.next;
+			else {
+				
+				for(int i=1;i<size-1;i++) {
+					node=node.next;
 				}
+				
 				Object temp = node.next.data;
 				node.next =null;
 				size--;

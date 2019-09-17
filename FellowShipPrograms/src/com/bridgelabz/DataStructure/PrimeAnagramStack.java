@@ -1,3 +1,13 @@
+/******************************************************************************
+ 
+ *  Purpose: to print the primeAnagram number between 0 to 1000 in a 2D Array
+ *              using stack linkedlist
+ *
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   14-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.DataStructure;
 
 import com.bridgelabz.Handler.StackLinkedList;

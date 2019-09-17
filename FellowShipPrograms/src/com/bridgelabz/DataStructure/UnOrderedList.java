@@ -52,6 +52,7 @@ public class UnOrderedList {
 		// printing the list
 		utility.show();
 		System.out.println();
+		
 		// taking input string from user to search it in the list
 		System.out.println("Enter a name you want to search : ");
 		String name = scanner.next();

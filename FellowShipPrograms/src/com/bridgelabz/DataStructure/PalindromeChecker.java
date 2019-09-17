@@ -20,7 +20,7 @@ public class PalindromeChecker {
 		
 		QueueLinkedList<Character> utility2= new QueueLinkedList<Character>();
 		//string to check it is palindrom or not
-		String str = "rada";
+		String str = "radar";
 		
 		//converting the above to character array
 		char[] arr = str.toCharArray();

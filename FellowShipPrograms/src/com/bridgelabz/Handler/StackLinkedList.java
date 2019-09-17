@@ -53,8 +53,8 @@ public class StackLinkedList<T> {
 
 				return (T) node.data;
 			} else {
-				while (node.next.next != null) {
-					node = node.next;
+				for(int i=0;i<top-1;i++) {
+					node=node.next;
 				}
 				Object temp = node.next.data;
 				node.next = null;
@@ -94,6 +94,7 @@ public class StackLinkedList<T> {
 	}
 
 	//returing the peek element 
+	@SuppressWarnings("unchecked")
 	public T peek() {
 		if (!isEmpty()) {
 			Node<T> n = head;
