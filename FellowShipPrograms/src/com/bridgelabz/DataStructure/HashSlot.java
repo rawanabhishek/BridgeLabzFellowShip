@@ -103,17 +103,10 @@ public class HashSlot {
 		list.insert(list10);
 
 		System.out.println();
-		for (int i = 0; i < list.getSize(); i++) {
-			// list.getData(i)
-			LinkedList<Integer> temp = list.getData(i);
-			if (list.getData(i) != null) {
-				for (int j = 0; j <list.getSize(); j++) {
-					if (temp.getData(j) != null) {
-						System.out.print(" " + temp.getData(j));
-					}
-				}
-			}
+	
+		
+		
 
-		}
+		
 	}
 }

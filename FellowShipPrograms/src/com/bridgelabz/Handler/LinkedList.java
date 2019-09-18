@@ -23,7 +23,7 @@ public class LinkedList<Type> {
 
 		Node<Type> node = new Node<Type>();
 		node.data = (Type) object;
-		
+
 		// node.data = (String) null;
 
 		if (head == null) {
@@ -45,12 +45,12 @@ public class LinkedList<Type> {
 	public void show() {
 		Node<Type> node = head;
 		while (node.next != null) {
-			System.out.print(" "+node.data);
+			System.out.print(" " + node.data);
 
 			node = node.next;
 
 		}
-		System.out.print(" "+node.data);
+		System.out.print(" " + node.data);
 
 	}
 
@@ -70,7 +70,7 @@ public class LinkedList<Type> {
 	// deleting data from list at a specific position
 	@SuppressWarnings("unchecked")
 	public <T> T deleteAt(int index) {
-      T temp=null;
+		T temp = null;
 		if (index == 0) {
 			head = head.next;
 		} else {
@@ -78,7 +78,7 @@ public class LinkedList<Type> {
 			Node<Type> n1 = null;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
-				temp=(T) n.data;
+				temp = (T) n.data;
 
 			}
 			n1 = n.next;
@@ -90,18 +90,21 @@ public class LinkedList<Type> {
 
 	// deleting data from list at satrt
 	public void deleteAtStart() {
+
 		head = head.next;
 
 	}
 
 	// deleting data from list at satrt
 	public <T> T deQueueFromStart() {
+		if (!isEmpty()) {
+			@SuppressWarnings("unchecked")
+			T temp = (T) head.data;
 
-		@SuppressWarnings("unchecked")
-		T temp = (T) head.data;
-
-		head = head.next;
-		return (T) temp;
+			head = head.next;
+			return (T) temp;
+		}
+		return null;
 	}
 
 	// deleting data from list at satrt
@@ -109,11 +112,11 @@ public class LinkedList<Type> {
 	public <T> T deQueueFromEnd() {
 
 		T temp = null;
-		
+
 		while (head.next == null) {
 			head = head.next;
 			temp = (T) head.data;
-			
+
 		}
 		return (T) temp;
 	}
@@ -220,34 +223,44 @@ public class LinkedList<Type> {
 		return size;
 	}
 
+	
+	//getting the data at specific position 
 	@SuppressWarnings("unchecked")
 	public <T> T getData(int index) {
-		Node<Type> n = head;
+		
 
-		for (int i = 0; i < index - 1; i++) {
-			n = n.next;
-		
-		
+		if(index==0) {
+			return (T) head.data;
 		}
-		return (T)n.data;
-	}
-	
-	public int getSize() {
-		int size=0;
+		
 		Node<Type> n = head;
-		if(head==null) {
+		for (int i = 0; i < index; i++) {
+			if(n.next!=null) {
+			n = n.next;
+			}else {
+				return null;
+			}
+		}
+		return (T) n.data;
+	}
+
+	//getting the size of the array 
+	public int getSize() {
+		int size = 0;
+		Node<Type> n = head;
+		if (head == null) {
+			
 			return size;
 			
-		}else {
-			while(n.next!=null) {
+
+		} else {
+			while (n.next != null) {
 				size++;
-				n=n.next;
+				n = n.next;
 			}
-			return size;
+			
+			return size+1;
 		}
 	}
 
-	
-	
-	
 }
