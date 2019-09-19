@@ -3,7 +3,7 @@ package com.bridgelabz.model;
 public class Pulse {
 	private String name;
 	private String weight;
-	private String priceperkg;
+	private int priceperkg;
 	
 
 	public String getName() {
@@ -22,11 +22,11 @@ public class Pulse {
 	this.weight = weight;
 	}
 
-	public String getPriceperkg() {
+	public int getPriceperkg() {
 	return priceperkg;
 	}
 
-	public void setPriceperkg(String priceperkg) {
+	public void setPriceperkg(int priceperkg) {
 	this.priceperkg = priceperkg;
 	}
 

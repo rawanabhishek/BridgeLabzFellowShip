@@ -3,7 +3,7 @@ package com.bridgelabz.model;
 public class Rice {
 	private String name;
 	private String weight;
-	private String priceperkg;
+	private int priceperkg;
 	
 	public String getName() {
 		return name;
@@ -21,11 +21,11 @@ public class Rice {
 		this.weight = weight;
 		}
 
-		public String getPriceperkg() {
+		public int getPriceperkg() {
 		return priceperkg;
 		}
 
-		public void setPriceperkg(String priceperkg) {
+		public void setPriceperkg(int priceperkg) {
 		this.priceperkg = priceperkg;
 		}
 }

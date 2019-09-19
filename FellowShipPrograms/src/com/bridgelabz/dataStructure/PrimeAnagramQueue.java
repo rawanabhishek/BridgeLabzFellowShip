@@ -1,3 +1,13 @@
+/******************************************************************************
+ 
+ *  Purpose: program to check number which are prime and anagram in the range
+ *           of 0 to 1000 and print them
+             
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   14-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.dataStructure;
 
 import com.bridgelabz.handler.QueueLinkedList;

@@ -30,7 +30,7 @@ public class OrderedList {
 		Scanner scanner = new Scanner(System.in);
 		// Reading the string from the file
 		BufferedReader br = new BufferedReader(
-				new FileReader("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/TextFiles/orderedlistinput"));
+				new FileReader("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/textfiles/orderedlistinput"));
 
 		String str = "";
 		try {
@@ -73,7 +73,7 @@ public class OrderedList {
 		String strWrite=LinkedList.Write;
 		//writing to the output file 
 		try {
-			File file=new File("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/TextFiles/orderedlistoutput");
+			File file=new File("/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/textfiles/orderedlistoutput");
 			FileWriter fileWriter = new FileWriter(file);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(strWrite);

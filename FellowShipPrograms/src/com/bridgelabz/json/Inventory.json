@@ -3,21 +3,21 @@
 		{
 			"name": "dubar",
 			"weight": "15 kg",
-			"priceperkg": "41 rs"
+			"priceperkg": 48
 		}
 	],
 	"pulses": [
 		{
 			"name": "chana",
 			"weight": "15 kg",
-			"priceperkg": "41 rs"
+			"priceperkg": 35
 		}
 	],
 	"wheats": [
 		{
 			"name": "chakki_fresh",
 			"weight": "20 kg",
-			"priceperkg": "27 rs"
+			"priceperkg": 29
 		}
 	]
 }

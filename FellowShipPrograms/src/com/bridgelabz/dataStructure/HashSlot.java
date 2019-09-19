@@ -37,7 +37,7 @@ public class HashSlot {
 		LinkedList<Integer> list9 = new LinkedList<Integer>();
 		LinkedList<Integer> list10 = new LinkedList<Integer>();
 		BufferedReader br = new BufferedReader(new FileReader(
-				"/home/admin1/FellowShip/FellowShipPrograms" + "/src/com/bridgelabz/" + "TextFiles/hashslotinput"));
+				"/home/admin1/FellowShip/FellowShipPrograms" + "/src/com/bridgelabz/" + "textfiles/hashslotinput"));
 
 		String str = "";
 
@@ -165,7 +165,7 @@ public class HashSlot {
 
 		try {
 			File file = new File(
-					"/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/TextFiles/hashslotoutput");
+					"/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/textfiles/hashslotoutput");
 			FileWriter fileWriter = new FileWriter(file);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(write);

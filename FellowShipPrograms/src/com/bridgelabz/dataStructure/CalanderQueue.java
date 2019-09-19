@@ -14,7 +14,7 @@ package com.bridgelabz.dataStructure;
 
 import java.util.Scanner;
 
-import com.bridgelabz.handler.LinkedList;
+
 import com.bridgelabz.handler.QueueLinkedList;
 import com.bridgelabz.utility.AlgorithmUtility;
 import com.bridgelabz.utility.FunctionalUtility;

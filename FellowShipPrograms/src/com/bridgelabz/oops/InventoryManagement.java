@@ -1,3 +1,12 @@
+/******************************************************************************
+ 
+ *  Purpose: Create a JSON file having Inventory Details for Rice, Pulses and 
+ *           Wheats with properties name, weight, price per kg.
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   19-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.oops;
 
 import java.io.File;
@@ -14,18 +23,38 @@ public class InventoryManagement {
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 		
       String sourcein="/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/"
-      		+ "Json/Inventory.json";
+      		+ "json/Inventory.json";
       
       String sourceout="/home/admin1/FellowShip/FellowShipPrograms/src/"
-      		+ "com/bridgelabz/Json/InventoryOut.json";
+      		+ "com/bridgelabz/json/InventoryOut.json";
       
       ObjectMapper mapper=new ObjectMapper();
-      InventoryModel data=mapper.readValue(new File(sourcein),InventoryModel.class );
-     
+		InventoryModel data = mapper.readValue(new File(sourcein), InventoryModel.class);
+
       int total=0;
-      System.out.println(""+data.getRice().get(0).getName());
-      
-      
+      System.out.println("Rice name:"+data.getRice().get(0).getName());
+       System.out.println("Rice weight:"+data.getRice().get(0).getWeight());
+       System.out.println("Rice price: "+data.getRice().get(0).getPriceperkg());
+       total+=data.getRice().get(0).getPriceperkg();
+       System.out.println("------------------------");
+       
+       System.out.println("Pulses name :"+data.getPulses().get(0).getName());
+       System.out.println("Pulses weight :"+data.getPulses().get(0).getWeight());
+       System.out.println("Pulses price :"+data.getPulses().get(0).getPriceperkg());
+       total+=data.getPulses().get(0).getPriceperkg();
+       System.out.println("------------------------");
+       
+       System.out.println("Wheat name :"+data.getWheats().get(0).getName());
+       System.out.println("Wheat weight :"+data.getWheats().get(0).getWeight());
+       System.out.println("Wheat price :"+data.getWheats().get(0).getPriceperkg());
+       total+=data.getWheats().get(0).getPriceperkg();
+       System.out.println("------------------------");
+       
+       System.out.println("total value is : "+total);
+       
+       
+       mapper.writeValue(new File(sourceout), data);
+       
 	}
 
 }

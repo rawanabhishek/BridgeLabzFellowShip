@@ -11,6 +11,15 @@ public  class InventoryModel implements Serializable {
 	private List<Rice> rice = null;
 	private List<Pulse> pulses = null;
 	private List<Wheat> wheats = null;
+	private int total;
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
 	public List<Rice> getRice() {
 		return rice;
 		}
@@ -34,6 +43,8 @@ public  class InventoryModel implements Serializable {
 		public void setWheats(List<Wheat> wheats) {
 		this.wheats = wheats;
 		}
+
+		
 	
 
 }
