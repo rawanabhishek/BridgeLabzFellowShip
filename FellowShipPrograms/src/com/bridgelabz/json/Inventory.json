@@ -1,0 +1,23 @@
+{
+	"rice": [
+		{
+			"name": "dubar",
+			"weight": "15 kg",
+			"priceperkg": "41 rs"
+		}
+	],
+	"pulses": [
+		{
+			"name": "chana",
+			"weight": "15 kg",
+			"priceperkg": "41 rs"
+		}
+	],
+	"wheats": [
+		{
+			"name": "chakki_fresh",
+			"weight": "20 kg",
+			"priceperkg": "27 rs"
+		}
+	]
+}
