@@ -52,7 +52,7 @@ public class LinkedList<Type> {
 			node = node.next;
 
 		}
-		System.out.println(" " + node.data);
+		System.out.print(" " + node.data);
 
 	}
 
@@ -235,20 +235,22 @@ public class LinkedList<Type> {
 
 	// getting the data at specific position
 	@SuppressWarnings("unchecked")
-	public <T> T getData(int index) {
-
+	public  Type getData(int index) {
+   
+		
 		if (index == 0) {
-			return (T) head.data;
+			return  head.data;
 		} else {
 			Node<Type> n = head;
-			for (int i = 0; i < index - 1; i++) {
+			for (int i = 0; i < index ; i++) {
 				if (n.next != null) {
 					n = n.next;
-				} else {
+				} 
+			else {
 					return null;
 				}
 			}
-			return (T) n.data;
+			return  n.data;
 		}
 	}
 

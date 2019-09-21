@@ -47,4 +47,12 @@ public class Company {
 		this.totalvalue = totalvalue;
 	}
 
+	@Override
+	public String toString() {
+		return "Company [symbol=" + symbol + ", name=" + name + ", shares=" + shares + ", sharesprice=" + sharesprice
+				+ ", totalvalue=" + totalvalue + "]";
+	}
+	
+	
+
 }

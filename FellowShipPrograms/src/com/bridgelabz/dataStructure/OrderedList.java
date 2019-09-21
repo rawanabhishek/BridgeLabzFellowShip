@@ -68,6 +68,10 @@ public class OrderedList {
 		size=utility.SearchByKey(num,size);
 		utility.Sort(size);
 		utility.show();
+		System.out.println();
+		int data=utility.getData(8);
+		System.out.println(data);
+		
 		utility.SaveToFile();
 		
 		String strWrite=LinkedList.Write;

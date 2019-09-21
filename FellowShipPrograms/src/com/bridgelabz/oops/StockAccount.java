@@ -1,3 +1,12 @@
+/******************************************************************************
+ 
+ *  Purpose: StockAccount.java implements a data type that  might be used by a 
+ *           financial institution to keep track of customer information.
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   21-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.oops;
 
 import java.io.File;
@@ -169,18 +178,23 @@ public class StockAccount {
 								mapper.writeValue(new File(sourceTransaction), transactionlist);
 
 							} else {
-								System.out.println("You transaction wasnt considered ");
+								System.out.println("You transaction was not considered ");
+								break;
+								
 							}
 							break;
 
 						} else {
 							System.out.println("you have insufficent amount ");
+							break;
 						}
 					} else {
 						System.out.println("Company does not have that much shares ");
+						break;
 					}
 				} else {
 					System.out.println("Wrong company ");
+					break;
 				}
 
 			case 2:
@@ -251,16 +265,20 @@ public class StockAccount {
 							mapper.writeValue(new File(sourceTransaction), transactionlist);
 
 						} else {
-							System.out.println("You transaction wasnt considered ");
+							System.out.println("You transaction was nott considered ");
+							break;
 						}
 
 						break;
 
 					} else {
 						System.out.println("You dont have that much shares ");
+						break;
 					}
 				} else {
 					System.out.println("Wrong company id ");
+					break;
+					
 				}
 				
 			case 3:
@@ -276,6 +294,7 @@ public class StockAccount {
 					}
 				}else {
 					System.out.println("You have no transactions ");
+					break;
 					
 				}
 				break;
@@ -284,7 +303,7 @@ public class StockAccount {
 				
 				
 			case 4:
-				System.out.println("Pehli fursat mein Nikal ");
+				System.out.println("Thank you for your time ");
 				exit=1;
 				
 				

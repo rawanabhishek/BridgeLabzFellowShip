@@ -37,7 +37,7 @@ public class StockStack {
 		
 		companylist.addAll(company.getCompany());
 		
-		//System.out.println(companylist.getData(0).getClass()
+		
 		
 	}
 
