@@ -1,0 +1,64 @@
+{
+	"adressbook": [
+		{
+			"statename": "mh",
+			"mh": [
+				{
+					"firstname": "Abhishek",
+					"lastname": "Rawat",
+					"address": {
+						"city": "Mumbai",
+						"state": "Maharashtra",
+						"zipcode": 400078
+					},
+					"contact": 9869353231
+				}
+			]
+		},
+		{
+		   "statename": "mp",
+			"mp": [
+				{
+					"firstname": "Chahat",
+					"lastname": "Jain",
+					"address": {
+						"city": "bhopal",
+						"state": "madhyapradesh",
+						"zipcode": 462023
+					},
+					"contact": 8108411413
+				}
+			]
+		},
+		{
+		  "statename": "wb",
+			"wb": [
+				{
+					"firstname": "Bomkesh",
+					"lastname": "Bakshi",
+					"address": {
+						"city": "kolkata",
+						"state": "Bengal",
+						"zipcode": 454123
+					},
+					"contact": 986758263
+				}
+			]
+		},
+		{
+		    "statename": "gj",
+			"gj": [
+				{
+					"firstname": "Narendra",
+					"lastname": "Modi",
+					"address": {
+						"city": "gandhinagar",
+						"state": "Gujarat",
+						"zipcode": 454263
+					},
+					"contact": 9785236456
+				}
+			]
+		}
+	]
+}

@@ -69,8 +69,7 @@ public class OrderedList {
 		utility.Sort(size);
 		utility.show();
 		System.out.println();
-		int data=utility.getData(8);
-		System.out.println(data);
+	
 		
 		utility.SaveToFile();
 		

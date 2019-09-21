@@ -10,28 +10,20 @@ package com.bridgelabz.handler;
 
 import java.util.List;
 
-public class LinkedList<Type> {
-	Node<Type> head;
+public class LinkedList<T> {
+	Node<T> head;
 
-	@SuppressWarnings("hiding")
-	public class Node<Type> {
-		Type data;
-		Node<Type> next;
-	}
-
-	// inserting the element at the start
-	@SuppressWarnings("unchecked")
 	public void insert(Object data) {
 
-		Node<Type> node = new Node<Type>();
-		node.data = (Type) data;
+		Node<T> node = new Node<T>();
+		node.data = (T) data;
 
 		// node.data = (String) null;
 
 		if (head == null) {
 			head = node;
 		} else {
-			Node<Type> n = head;
+			Node<T> n = head;
 
 			while (n.next != null) {
 				n = n.next;
@@ -45,7 +37,7 @@ public class LinkedList<Type> {
 
 	// printing the linked list
 	public void show() {
-		Node<Type> node = head;
+		Node<T> node = head;
 		while (node.next != null) {
 			System.out.println(" " + node.data);
 
@@ -58,7 +50,7 @@ public class LinkedList<Type> {
 
 	// saving the linked list to Write String
 	public void SaveToFile() {
-		Node<Type> node = head;
+		Node<T> node = head;
 		while (node.next != null) {
 
 			Write += " " + node.data;
@@ -71,13 +63,13 @@ public class LinkedList<Type> {
 
 	// deleting data from list at a specific position
 	@SuppressWarnings("unchecked")
-	public <T> T deleteAt(int index) {
+	public T deleteAt(int index) {
 		T temp = null;
 		if (index == 0) {
 			head = head.next;
 		} else {
-			Node<Type> n = head;
-			Node<Type> n1 = null;
+			Node<T> n = head;
+			Node<T> n1 = null;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 				temp = (T) n.data;
@@ -133,10 +125,10 @@ public class LinkedList<Type> {
 	}
 
 	// inserting the element at the start of the list
-	public void insertAtstart(Type data) {
-		Node<Type> head = null;
-		Node<Type> node = new Node<Type>();
-		node.data = data;
+	public void insertAtstart(T data) {
+		Node<T> head = null;
+		Node<T> node = new Node<T>();
+		node.data = (T) data;
 		node.next = null;
 		node.next = head;
 		head = node;
@@ -144,15 +136,15 @@ public class LinkedList<Type> {
 	}
 
 	// inserting the element at a specific position
-	public void insertAt(int index, Type data) {
-		Node<Type> node = new Node<Type>();
+	public void insertAt(int index, T data) {
+		Node<T> node = new Node<T>();
 		node.data = data;
 		node.next = null;
 
 		if (index == 0) {
 			insertAtstart(data);
 		} else {
-			LinkedList<Type>.Node<Type> n = head;
+			Node<T> n =  head;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 			}
@@ -162,12 +154,12 @@ public class LinkedList<Type> {
 	}
 
 	// sorting the linked list from ascending to descending order
-	public <T extends Comparable<T>> void Sort(int size) {
+	public <Type extends Comparable<Type>> void Sort(int size) {
 
 		@SuppressWarnings("unchecked")
-		Node<T> n = (Node<T>) head;
-		Node<T> n1 = n.next;
-		T temp = null;
+		Node<Type> n = (Node<Type>) head;
+		Node<Type> n1 = n.next;
+		Type temp = null;
 
 		for (int i = 0; i < size - 1; i++) {
 
@@ -190,9 +182,9 @@ public class LinkedList<Type> {
 	}
 
 	// searching the value in the list
-	public int SearchByKey(Type key, int size) {
+	public int SearchByKey(T key, int size) {
 
-		Node<Type> n = head;
+		Node<T> n = head;
 		boolean isFound = false;
 		int count = -1;
 		if (n.next == null) {
@@ -235,29 +227,27 @@ public class LinkedList<Type> {
 
 	// getting the data at specific position
 	@SuppressWarnings("unchecked")
-	public  Type getData(int index) {
-   
-		
+	public T getData(int index) {
+
 		if (index == 0) {
-			return  head.data;
+			return head.data;
 		} else {
-			Node<Type> n = head;
-			for (int i = 0; i < index ; i++) {
+			Node<T> n = head;
+			for (int i = 0; i < index; i++) {
 				if (n.next != null) {
 					n = n.next;
-				} 
-			else {
+				} else {
 					return null;
 				}
 			}
-			return  n.data;
+			return n.data;
 		}
 	}
 
 	// getting the size of the array
 	public int getSize() {
 		int size = 0;
-		Node<Type> n = head;
+		Node<T> n = head;
 		if (head == null) {
 
 			return size;
@@ -278,6 +268,32 @@ public class LinkedList<Type> {
 
 		}
 
+	}
+
+	public boolean Search(T statecode, int size) {
+		Node<T> n = head;
+		
+		System.out.println("HSAJBHJASJDGJAS");
+		if (n.next == null) {
+
+			if (n.data == statecode) {
+				System.out.println(n.data);
+				return true;
+
+			}
+		}
+
+		while (n.next != null) {
+
+			if (n.data == statecode) {
+				System.out.println(n.data);
+				return true;
+
+			}
+			n = n.next;
+
+		}
+		return false;
 	}
 
 }
