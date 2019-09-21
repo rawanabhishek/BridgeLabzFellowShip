@@ -35,7 +35,7 @@ public class OopsUtility {
 	}
 	
 	
-	public static int calculateValueOfStock(int  share,int price) {
+	public static int calculateValueOf(int  share,int price) {
 		return share*price;
 	}
 }

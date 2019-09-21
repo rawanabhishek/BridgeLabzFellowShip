@@ -8,6 +8,8 @@
  ******************************************************************************/
 package com.bridgelabz.handler;
 
+import java.util.List;
+
 public class LinkedList<Type> {
 	Node<Type> head;
 
@@ -19,10 +21,10 @@ public class LinkedList<Type> {
 
 	// inserting the element at the start
 	@SuppressWarnings("unchecked")
-	public void insert(Object object) {
+	public void insert(Object data) {
 
 		Node<Type> node = new Node<Type>();
-		node.data = (Type) object;
+		node.data = (Type) data;
 
 		// node.data = (String) null;
 
@@ -45,12 +47,12 @@ public class LinkedList<Type> {
 	public void show() {
 		Node<Type> node = head;
 		while (node.next != null) {
-			System.out.print(" " + node.data);
+			System.out.println(" " + node.data);
 
 			node = node.next;
 
 		}
-		System.out.print(" " + node.data);
+		System.out.println(" " + node.data);
 
 	}
 
@@ -193,16 +195,15 @@ public class LinkedList<Type> {
 		Node<Type> n = head;
 		boolean isFound = false;
 		int count = -1;
-		if(n.next==null) {
-			
+		if (n.next == null) {
+
 			count++;
 			if (n.data == key) {
 				isFound = true;
-				
+
 			}
 		}
-		
-		
+
 		while (n.next != null) {
 			count++;
 
@@ -232,44 +233,49 @@ public class LinkedList<Type> {
 		return size;
 	}
 
-	
-	//getting the data at specific position 
+	// getting the data at specific position
 	@SuppressWarnings("unchecked")
 	public <T> T getData(int index) {
-		
 
-		if(index==0) {
+		if (index == 0) {
 			return (T) head.data;
-		}
-		
-		Node<Type> n = head;
-		for (int i = 0; i < index; i++) {
-			if(n.next!=null) {
-			n = n.next;
-			}else {
-				return null;
+		} else {
+			Node<Type> n = head;
+			for (int i = 0; i < index - 1; i++) {
+				if (n.next != null) {
+					n = n.next;
+				} else {
+					return null;
+				}
 			}
+			return (T) n.data;
 		}
-		return (T) n.data;
 	}
 
-	//getting the size of the array 
+	// getting the size of the array
 	public int getSize() {
 		int size = 0;
 		Node<Type> n = head;
 		if (head == null) {
-			
+
 			return size;
-			
 
 		} else {
 			while (n.next != null) {
 				size++;
 				n = n.next;
 			}
-			
-			return size+1;
+
+			return size + 1;
 		}
+	}
+
+	public <T> void addAll(List<T> list) {
+		for (int i = 0; i < list.size(); i++) {
+			insert(list.get(i));
+
+		}
+
 	}
 
 }

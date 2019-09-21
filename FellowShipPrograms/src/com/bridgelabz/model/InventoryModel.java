@@ -12,6 +12,15 @@ public  class InventoryModel implements Serializable {
 	private List<Pulse> pulses = null;
 	private List<Wheat> wheats = null;
 	private int total;
+	private int grandtotal;
+	public int getGrandtotal() {
+		return grandtotal;
+	}
+
+	public void setGrandtotal(int grandtotal) {
+		this.grandtotal = grandtotal;
+	}
+
 	public int getTotal() {
 		return total;
 	}

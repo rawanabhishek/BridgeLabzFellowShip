@@ -2,22 +2,31 @@ package com.bridgelabz.model;
 
 public class Rice {
 	private String name;
-	private String weight;
+	private int weight;
 	private int priceperkg;
+	private int totalvalue;
 	
 	public String getName() {
 		return name;
 		}
 
+		public int getTotalvalue() {
+		return totalvalue;
+	}
+
+	public void setTotalvalue(int totalvalue) {
+		this.totalvalue = totalvalue;
+	}
+
 		public void setName(String name) {
 		this.name = name;
 		}
 
-		public String getWeight() {
+		public int getWeight() {
 		return weight;
 		}
 
-		public void setWeight(String weight) {
+		public void setWeight(int weight) {
 		this.weight = weight;
 		}
 

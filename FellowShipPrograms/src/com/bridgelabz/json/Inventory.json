@@ -2,21 +2,21 @@
 	"rice": [
 		{
 			"name": "dubar",
-			"weight": "15 kg",
+			"weight": 15,
 			"priceperkg": 48
 		}
 	],
 	"pulses": [
 		{
 			"name": "chana",
-			"weight": "15 kg",
+			"weight": 15,
 			"priceperkg": 35
 		}
 	],
 	"wheats": [
 		{
 			"name": "chakki_fresh",
-			"weight": "20 kg",
+			"weight": 20,
 			"priceperkg": 29
 		}
 	]

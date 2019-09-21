@@ -12,6 +12,12 @@ public class StockModel implements Serializable {
 	private List<Tata> tcs = null;
 	private List<Hdfc> hdfc = null;
 	private List<Zee> zee = null;
+	private int valueOfAllStock;
+
+	
+	
+
+	
 
 	public List<Tata> getTata() {
 		return tcs;
@@ -35,6 +41,17 @@ public class StockModel implements Serializable {
 
 	public void setZee(List<Zee> zee) {
 		this.zee = zee;
+	}
+
+
+
+
+	public int getValueOfAllStock() {
+		return valueOfAllStock;
+	}
+
+	public void setValueOfAllStock(int valueOfAllStock) {
+		this.valueOfAllStock = valueOfAllStock;
 	}
 
 }

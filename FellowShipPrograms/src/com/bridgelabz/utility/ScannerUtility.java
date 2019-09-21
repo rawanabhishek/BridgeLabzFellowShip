@@ -15,26 +15,26 @@ public class ScannerUtility {
           
           //scanner method  for integer
           public static int intScanner() {
-        	int value=scanner.nextInt();
         	
-        	return value;
+        	
+        	return scanner.nextInt();
         	
           }
           
           //scanner method for character
           public static char charScanner() {
-          	char value=scanner.next().charAt(0);
+          	
           
-          	return value;
+          	return scanner.next().charAt(0);
           	
             }
           
           
           //scanner method for string
           public static String stringScanner() {
-          	String value=scanner.nextLine();
+          	
           
-          	return value;
+          	return scanner.next();
           	
             }
           

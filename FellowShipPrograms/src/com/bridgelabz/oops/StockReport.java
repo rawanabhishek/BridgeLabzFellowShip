@@ -23,23 +23,42 @@ public class StockReport {
 		System.out.println("Stock name : "+data.getTata().get(0).getName());
 		System.out.println("Stock shares : "+data.getTata().get(0).getShare());
 		System.out.println("Stock price: "+data.getTata().get(0).getPrice());
-		int valueOfTcs=OopsUtility.calculateValueOfStock(data.getTata().get(0).getShare(),data.getTata().get(0).getPrice());
+		int valueOfTcs=OopsUtility.calculateValueOf(data.getTata().get(0).getShare(),data.getTata().get(0).getPrice());
+		System.out.println("Total value of Tata is :"+valueOfTcs);
 		System.out.println();
 		
 		
 		System.out.println("Stock name : "+data.getHdfc().get(0).getName());
 		System.out.println("Stock shares : "+data.getHdfc().get(0).getShare());
 		System.out.println("Stock price : "+data.getHdfc().get(0).getPrice());
-		int valueOfHfc=OopsUtility.calculateValueOfStock(data.getHdfc().get(0).getShare(),data.getHdfc().get(0).getPrice());
+		int valueOfHfc=OopsUtility.calculateValueOf(data.getHdfc().get(0).getShare(),data.getHdfc().get(0).getPrice());
+		System.out.println("Total value of Hdfc is :"+valueOfHfc);
 		System.out.println();
 		
 		System.out.println("Stock name : "+data.getZee().get(0).getName());
 		System.out.println("Stock shares : "+data.getZee().get(0).getShare());
 		System.out.println("Stock price : "+data.getZee().get(0).getPrice());
-		int valueOfZee=OopsUtility.calculateValueOfStock(data.getZee().get(0).getShare(),data.getZee().get(0).getPrice());
+		int valueOfZee=OopsUtility.calculateValueOf(data.getZee().get(0).getShare(),data.getZee().get(0).getPrice());
+		System.out.println("Total value of Zee is :"+valueOfZee);
+		
+		System.out.println();
 		
 		
-		data.setValueOfTcs
+		
+		int valueOfAllStock=valueOfTcs+valueOfHfc+valueOfZee;
+		System.out.println("Total value of all shares is : "+valueOfAllStock);
+		
+		data.getTata().get(0).setValueOfTcs(valueOfTcs);
+		data.getHdfc().get(0).setValueOfHfc(valueOfHfc);
+		data.getZee().get(0).setValueOfZee(valueOfZee);
+		data.setValueOfAllStock(valueOfAllStock);
+		
+		mapper.writeValue(new File(sourceout), data);
+		
+		
+		
+		
+		
 		
 		
 	}

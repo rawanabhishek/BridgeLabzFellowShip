@@ -4,6 +4,13 @@ public class Tata {
 	private String name;
 	private int share;
 	private Integer price;
+	private int valueOfTcs;
+	public int getValueOfTcs() {
+		return valueOfTcs;
+	}
+	public void setValueOfTcs(int valueOfTcs) {
+		this.valueOfTcs = valueOfTcs;
+	}
 	public String getName() {
 		return name;
 	}

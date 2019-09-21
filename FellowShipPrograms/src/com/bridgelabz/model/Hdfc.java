@@ -4,6 +4,13 @@ public class Hdfc {
 	private String name;
 	private int share;
 	private Integer price;
+	private int valueOfHfc;
+	public int getValueOfHfc() {
+		return valueOfHfc;
+	}
+	public void setValueOfHfc(int valueOfHfc) {
+		this.valueOfHfc = valueOfHfc;
+	}
 	public String getName() {
 		return name;
 	}

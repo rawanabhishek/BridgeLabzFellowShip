@@ -1,0 +1,34 @@
+{
+	"rice": [
+		{
+			"name": "dubar",
+			"weight": 15,
+			"priceperkg": 48,
+			"totalvalue": 720
+		}
+	],
+	"pulses": [
+		{
+			"name": "chana",
+			"weight": 15,
+			"priceperkg": 35,
+			"totalvalue": 525
+		},
+		{
+			"name": "dmart",
+			"weight": 45,
+			"priceperkg": 25,
+			"totalvalue": 1125
+		}
+	],
+	"wheats": [
+		{
+			"name": "chakki_fresh",
+			"weight": 20,
+			"priceperkg": 29,
+			"totalvalue": 580
+		}
+	],
+	"total": 1825,
+	"grandtotal": 2950
+}

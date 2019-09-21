@@ -4,6 +4,13 @@ public class Zee {
 	private String name;
 	private int share;
 	private Integer price;
+	private int valueOfZee;
+	public int getValueOfZee() {
+		return valueOfZee;
+	}
+	public void setValueOfZee(int valueOfZee) {
+		this.valueOfZee = valueOfZee;
+	}
 	public String getName() {
 		return name;
 	}
