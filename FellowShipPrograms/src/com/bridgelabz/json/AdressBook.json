@@ -1,1 +1,19 @@
-{"adressbook":[{"statecode":"mh","state":[{"firstname":"abhishek","lastname":"rawat","contact":"9869353231","address":{"zipcode":"400078","city":"mumbai","state":"maharashtra"}}]}]}
+{
+	"adressbook": [
+		{
+			"statecode": "mh",
+			"state": [
+				{
+					"firstname": "abhishek",
+					"lastname": "rawat",
+					"contact": "9869353231",
+					"address": {
+						"zipcode": "400078",
+						"city": "mumbai",
+						"state": "maharashtra"
+					}
+				}
+			]
+		}
+	]
+}
