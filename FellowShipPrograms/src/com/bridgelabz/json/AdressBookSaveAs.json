@@ -1,0 +1,34 @@
+{
+	"person": [
+		{
+			"firstname": "abhishek",
+			"lastname": "rawat",
+			"contact": "8108411413",
+			"address": {
+				"zipcode": "40080",
+				"city": "bhopal",
+				"state": "maharahstra"
+			}
+		},
+		{
+			"firstname": "abhishek",
+			"lastname": "rawat",
+			"contact": "98693523",
+			"address": {
+				"zipcode": "456123",
+				"city": "mumb",
+				"state": "maha"
+			}
+		},
+		{
+			"firstname": "venom",
+			"lastname": "rishi",
+			"contact": "0987456321",
+			"address": {
+				"zipcode": "456123",
+				"city": "panvel",
+				"state": "maharahstra"
+			}
+		}
+	]
+}
