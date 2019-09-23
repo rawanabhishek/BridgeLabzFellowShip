@@ -1,1 +1,32 @@
-[{"id":"rawat@123.com","name":"abhishek","shares":25,"balance":385},{"id":"rishi@123.com","name":"rishi","shares":56,"balance":4984},{"id":"baudi@123.com","name":"baudi","shares":76,"balance":5700},{"id":"vishnu@123.com","name":"vishnu","shares":89,"balance":8544},{"id":"vinay@123.com","name":"vinay","shares":15,"balance":1200}]
+[
+	{
+		"id": "rawat@123.com",
+		"name": "abhishek",
+		"shares": 25,
+		"balance": 385
+	},
+	{
+		"id": "rishi@123.com",
+		"name": "rishi",
+		"shares": 56,
+		"balance": 4984
+	},
+	{
+		"id": "baudi@123.com",
+		"name": "baudi",
+		"shares": 76,
+		"balance": 5700
+	},
+	{
+		"id": "vishnu@123.com",
+		"name": "vishnu",
+		"shares": 89,
+		"balance": 8544
+	},
+	{
+		"id": "vinay@123.com",
+		"name": "vinay",
+		"shares": 15,
+		"balance": 1200
+	}
+]
