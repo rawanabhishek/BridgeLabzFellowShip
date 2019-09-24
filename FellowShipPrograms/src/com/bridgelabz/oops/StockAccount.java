@@ -24,6 +24,7 @@ import com.bridgelabz.model.Companymodel;
 import com.bridgelabz.model.Customer;
 import com.bridgelabz.model.CustomerModel;
 import com.bridgelabz.model.Transactions;
+import com.bridgelabz.model.TransactionsModel;
 import com.bridgelabz.utility.ScannerUtility;
 
 public class StockAccount {
@@ -41,8 +42,11 @@ public class StockAccount {
 		// creating object for model class
 		Companymodel company = new Companymodel();
 		CustomerModel customer = new CustomerModel();
-		// Transactions transaction=new Transactions();
-
+		TransactionsModel transactionmodel=new TransactionsModel();
+		 
+          transactionmodel.setTransaction("Transactions");
+       
+        
 		// creating arraylist of object
 		ArrayList<Company> companylist = new ArrayList<Company>();
 		ArrayList<Customer> customerlist = new ArrayList<Customer>();
@@ -50,14 +54,23 @@ public class StockAccount {
 
 		company = mapper.readValue(new File(sourceCompany), Companymodel.class);
 		customer = mapper.readValue(new File(sourceCustomer), CustomerModel.class);
-
+		
+		
+        File file=new File(sourceTransaction);
+        if(file.length()>0) {
+        	transactionmodel=mapper.readValue(new File(sourceTransaction), TransactionsModel.class);
+        	transactionlist.addAll(transactionmodel.getTransactions());
+        	
+        }
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 		DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern("HHmmss");
 
 		companylist.addAll(company.getCompany());
 		customerlist.addAll(customer.getCustomer());
-		// transactionlist.addAll(c)
+		
+		
+
 
 		int companyindex = 0;
 		int customerindex = 0;
@@ -121,42 +134,45 @@ public class StockAccount {
 				if (companyFound == true) {
 					System.out.println("Enter the number of shares you want to buy ");
 					int buy = ScannerUtility.intScanner();
-					if (buy <= companylist.get(companyindex).getShares()) {
-						int purchaseAmount = companylist.get(companyindex).getSharesprice() * buy;
-						if (customerlist.get(customerindex).getBalance() >= purchaseAmount) {
+					
 
-							customerlist.get(customerindex)
-									.setBalance(customerlist.get(customerindex).getBalance() - purchaseAmount);
-
-							customerlist.get(customerindex)
-									.setShares(customerlist.get(customerindex).getShares() + buy);
-
-							companylist.get(companyindex).setShares(companylist.get(companyindex).getShares() - buy);
-
-							companylist.get(companyindex).setTotalvalue(companylist.get(companyindex).getTotalvalue()
-									- buy * companylist.get(companyindex).getSharesprice());
-
-							LocalDateTime now = LocalDateTime.now();
-
-							String transactionID = dateTimeFormatter2.format(now)
-									+ companylist.get(companyindex).getSymbol()
-									+ customerlist.get(customerindex).getid();
-
-							Transactions transaction = new Transactions();
-
-							transaction.setTransactionid(transactionID);
-							transaction.setAmount(purchaseAmount);
-							transaction.setBuyer(customerlist.get(customerindex).getid());
-							transaction.setSeller(companylist.get(companyindex).getSymbol());
-							transaction.setDate(dateTimeFormatter.format(now));
-
-							transactionlist.add(transaction);
-
-							System.out.println("Do you want to save your transaction ");
+							System.out.println("Do you want to save your transaction (yes/no)");
 							String save = ScannerUtility.stringScanner();
 
-							if (save.equals("yess")) {
+							if (save.equals("yes")) {
 								transactioncount++;
+								
+								if (buy <= companylist.get(companyindex).getShares()) {
+									int purchaseAmount = companylist.get(companyindex).getSharesprice() * buy;
+									if (customerlist.get(customerindex).getBalance() >= purchaseAmount) {
+
+										customerlist.get(customerindex)
+												.setBalance(customerlist.get(customerindex).getBalance() - purchaseAmount);
+
+										customerlist.get(customerindex)
+												.setShares(customerlist.get(customerindex).getShares() + buy);
+
+										companylist.get(companyindex).setShares(companylist.get(companyindex).getShares() - buy);
+
+										companylist.get(companyindex).setTotalvalue(companylist.get(companyindex).getTotalvalue()
+												- buy * companylist.get(companyindex).getSharesprice());
+
+										LocalDateTime now = LocalDateTime.now();
+
+										String transactionID = dateTimeFormatter2.format(now)
+												+ companylist.get(companyindex).getSymbol()
+												+ customerlist.get(customerindex).getid();
+
+										Transactions transaction = new Transactions();
+			                            
+										transaction.setTransactionid(transactionID);
+										transaction.setAmount(purchaseAmount);
+										transaction.setBuyer(customerlist.get(customerindex).getid());
+										transaction.setSeller(companylist.get(companyindex).getSymbol());
+										transaction.setDate(dateTimeFormatter.format(now));
+
+										transactionlist.add(transaction);
+								
 								
 								System.out.println("----------------------------------");
 								System.out.println("Customer Name: "+customerlist.get(customerindex).getName());
@@ -172,10 +188,10 @@ public class StockAccount {
 //								System.out.println("Seller :"+transactionlist.get(0).getSeller());
 								
 								
-								
+								transactionmodel.setTransactions(transactionlist);
 								mapper.writeValue(new File(sourceCompanyOut), company.getCompany());
 								mapper.writeValue(new File(sourceCustomerOut), customer.getCustomer());
-								mapper.writeValue(new File(sourceTransaction), transactionlist);
+								mapper.writeValue(new File(sourceTransaction), transactionmodel);
 
 							} else {
 								System.out.println("You transaction was not considered ");

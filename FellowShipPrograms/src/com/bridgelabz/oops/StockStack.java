@@ -1,44 +1,58 @@
 package com.bridgelabz.oops;
 
-import java.io.File;
-import java.io.IOException;
 
+import java.io.IOException;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 
-import com.bridgelabz.handler.LinkedList;
-import com.bridgelabz.model.Company;
-import com.bridgelabz.model.Companymodel;
-import com.bridgelabz.model.Customer;
-import com.bridgelabz.model.CustomerModel;
+import com.bridgelabz.handler.QueueLinkedList;
+import com.bridgelabz.handler.StackLinkedList;
+import com.bridgelabz.model.Transactions;
+import com.bridgelabz.model.TransactionsModel;
+import com.bridgelabz.utility.ScannerUtility;
+import com.bridgelabz.utility.jsonutility;
 
 public class StockStack {
 
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-		String sourceCompany = "/home/admin1/FellowShip/FellowShipPrograms/src/com/"
-				+ "bridgelabz/json/Company.json";
-		String sourceCustomer = "/home/admin1/FellowShip/FellowShipPrograms/src/com/"
-				+ "bridgelabz/json/Customer.json";
-		
-		ObjectMapper mapper = new ObjectMapper();
 
-		// creating object for model class
-		Companymodel company = new Companymodel();
-		CustomerModel customer = new CustomerModel();
+		String sourceTransaction = "/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/json/transaction.json";
 		
-		LinkedList<Company> companylist = new LinkedList<Company>();
-		LinkedList<Customer> customerlist = new LinkedList<Customer>();
-		
-		
-		company = mapper.readValue(new File(sourceCompany), Companymodel.class);
-		customer = mapper.readValue(new File(sourceCustomer), CustomerModel.class);
-		
-		companylist.addAll(company.getCompany());
-		
-		
-		
+
+		TransactionsModel transaction = new TransactionsModel();
+
+		transaction = (TransactionsModel) jsonutility.readMapper(sourceTransaction, transaction);
+		StackLinkedList<Transactions> stack = new StackLinkedList<Transactions>();
+
+		stack.PushAll(transaction.getTransactions());
+
+		System.out.println("Enter company symbol to see transaction :");
+		String cmpsym = ScannerUtility.stringScanner();
+
+		int size = stack.sizeStack();
+
+		for (int i = 0; i < size; i++) {
+			if (cmpsym.equals(stack.peek().getSeller())) {
+				if (i == 0) {
+					System.out.print("Transaction_id\t\t");
+					System.out.print("Buyer \t\t");
+					System.out.print("Seller \t\t");
+					System.out.print("Transaction amount\t\t");
+					System.out.print("Date time \t\t");
+				}
+				
+				System.out.println();
+				System.out.print(stack.peek().getTransactionid()+"\t");
+				System.out.print(stack.peek().getBuyer()+"\t");
+				System.out.print(stack.peek().getSeller()+"\t\t");
+				System.out.print(stack.peek().getAmount()+"\t\t\t");
+				System.out.print(stack.peek().getDate()+"\t\t");
+				
+			}
+			stack.pop();
+		}
+
 	}
 
 }

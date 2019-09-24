@@ -33,6 +33,7 @@ public class Clinique {
 		int doctorid = 0;
 		int patientid = 10;
 		int appointmentid = 100;
+		int nopatient=0;
 		ArrayList<Appointment> appoint = new ArrayList<Appointment>();
 		ArrayList<Doctor> doctor = new ArrayList<Doctor>();
 		ArrayList<Patients> patient = new ArrayList<Patients>();
@@ -62,7 +63,9 @@ public class Clinique {
 		boolean clinique = false;
 
 		while (clinique != true) {
-			System.out.println("Select option from menu\n");
+			System.out.println("---------------------------");
+			System.out.println("Select option from menu");
+			System.out.println("---------------------------");
 			System.out.println("1. add doctor\n2. add patient\n3. search doctor by id\n4. search doctor by name\n5."
 					+ " search doctor by specialization\n6. search doctor by availability\n7. search patient "
 					+ "by id\n8. search patient" + " by name\n9. search patient by number\n10. "
@@ -90,6 +93,8 @@ public class Clinique {
 				System.out.println("Enter availabilty end time :");
 				int timeout = ScannerUtility.intScanner();
 
+				
+				doc.setNoofpatient(nopatient);
 				doc.setName(docname);
 				doc.setSpecialization(spec);
 				availability.setTimein(timestart);
@@ -279,16 +284,20 @@ public class Clinique {
 							System.out.println("Doctor is avail at " + doctor.get(i).getAvailablity().getDate());
 							System.out.println("You want to take appointment on this date (yes/no)");
 							doctorid=i+1;
+							int doctorindex=i;
 							doctorname=doctor.get(i).getName();
+							nopatient=doctor.get(i).getNoofpatient();
 							
 							String choice = ScannerUtility.stringScanner();
 							if (choice.equals("yes")) {
 								System.out.println(doctor.get(i).toString());
 								System.out.println("Enter time for appointment .");
 								int time = ScannerUtility.intScanner();
-								if (time == doctor.get(i).getAvailablity().getTimein()
-										|| time == doctor.get(i).getAvailablity().getTimeout()) {
+								if ((time == doctor.get(i).getAvailablity().getTimein()
+										|| time == doctor.get(i).getAvailablity().getTimeout()) ) {
 									
+									
+									if(nopatient<=5) {
 									System.out.println("Enter your Patient id..");
 									int patientappointmentid=ScannerUtility.intScanner();
 									for(int j=0;j<patient.size();j++) {
@@ -296,6 +305,8 @@ public class Clinique {
 											System.out.println("Your appointment has been booked ..");
 											idpatient=patient.get(j).getId();
 											indexpatient=j;
+											nopatient+=1;
+											
 										}
 									}
 									
@@ -303,6 +314,8 @@ public class Clinique {
 									Appointment appointment=new Appointment();
 									appointment.setDoctorid(doctorid);
 									
+							        doctor.get(doctorindex).setNoofpatient(nopatient);
+							        modelDoctor.setDoctor(doctor);
 									appointment.setPatientname(patient.get(indexpatient).getName());;
 									appointment.setPatientcontact(patient.get(indexpatient).getContact());
 									appointment.setPatientid(idpatient);
@@ -313,9 +326,11 @@ public class Clinique {
 									modelAppointment.setAppoinment(appoint);
 									
 									jsonutility.writeMapper(appointmentsource, modelAppointment);
-									
+									jsonutility.writeMapper(doctorsource, modelDoctor);
 								
-									
+									}else {
+										System.out.println("No of patient is full ");
+									}
 
 								} else {
 									System.out.println("Sorry you have selected wrong time ");

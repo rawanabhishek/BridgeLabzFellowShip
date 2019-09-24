@@ -1,24 +1,26 @@
 {
 	"doctor": [
 		{
-			"name": "rishi",
+			"name": "vinay",
 			"id": 1,
-			"specialization": "heart",
+			"specialization": "surgery",
 			"availablity": {
-				"timein": 11,
-				"timeout": 12,
-				"date": "22/09/2019"
-			}
+				"timein": 2,
+				"timeout": 3,
+				"date": "25/09/2019"
+			},
+			"noofpatient": 0
 		},
 		{
 			"name": "abhishek",
 			"id": 2,
 			"specialization": "heart",
 			"availablity": {
-				"timein": 12,
-				"timeout": 2,
-				"date": "22/09/2018"
-			}
+				"timein": 11,
+				"timeout": 12,
+				"date": "25/09/2019"
+			},
+			"noofpatient": 1
 		}
 	]
 }

@@ -8,6 +8,8 @@
  ******************************************************************************/
 package com.bridgelabz.handler;
 
+import java.util.List;
+
 public class StackLinkedList<T> {
 	Node<T> head;
 	public int top = -1;
@@ -24,8 +26,8 @@ public class StackLinkedList<T> {
 	}
 
 	// pushing the element in the stack
-	public void push(T data) {
-		Node<T> node = new Node<T>(data);
+	public void push(T t) {
+		Node<T> node = new Node<T>(t);
 		if (head == null) {
 			head = node;
 			top++;
@@ -106,6 +108,14 @@ public class StackLinkedList<T> {
 		}
 		return null;
 		
+	}
+	
+	public  void PushAll(List<T> list) {
+		for (int i = 0; i < list.size(); i++) {
+			push(list.get(i));
+
+		}
+
 	}
 
 }

@@ -8,6 +8,8 @@
  ******************************************************************************/
 package com.bridgelabz.handler;
 
+import java.util.List;
+
 public class QueueUtility<T> {
 	public Object q[] = new Object[5];
 	public int size = 0;
@@ -62,5 +64,15 @@ public class QueueUtility<T> {
 		for(int i=0;i<size;i++) {
 			System.out.print(q[(front+i)%5]+" ");
 		}
+	}
+	
+	
+	//enquing all elemnt in the queue 
+	public  void enqueueAll(List<T> list) {
+		for (int i = 0; i < list.size(); i++) {
+			enQueue(list.get(i));
+
+		}
+
 	}
 }

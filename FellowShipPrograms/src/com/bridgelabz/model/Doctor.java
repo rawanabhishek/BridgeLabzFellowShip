@@ -6,6 +6,13 @@ public class Doctor {
 	private int id;
 	private String specialization;
 	private Availability availablity;
+	private int noofpatient;
+	public int getNoofpatient() {
+		return noofpatient;
+	}
+	public void setNoofpatient(int noofpatient) {
+		this.noofpatient = noofpatient;
+	}
 	public String getName() {
 		return name;
 	}

@@ -9,6 +9,8 @@
  ******************************************************************************/
 package com.bridgelabz.handler;
 
+import java.util.List;
+
 public class QueueLinkedList<T> {
 	Node<T> head;
 	int size = 0;
@@ -172,5 +174,34 @@ public class QueueLinkedList<T> {
 	public int sizeQueue() {
 		return size;
 	}
+	
+	//enquing all elemnt in the queue 
+		public  void enqueueAll(List<T> list) {
+			for (int i = 0; i < list.size(); i++) {
+				addRear(list.get(i));
+
+			}
+
+		}
+		
+		//
+		
+		public T getData(int index) {
+
+			if (index == 0) {
+				return (T) head.data;
+			} else {
+				Node<T> n = head;
+				for (int i = 0; i < index; i++) {
+					if (n.next != null) {
+						n = n.next;
+					} else {
+						return null;
+					}
+				}
+				return (T) n.data;
+			}
+		}
+
 
 }
