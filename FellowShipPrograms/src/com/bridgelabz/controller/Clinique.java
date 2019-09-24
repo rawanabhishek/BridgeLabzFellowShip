@@ -1,4 +1,5 @@
-package com.bridgelabz.oops;
+
+package com.bridgelabz.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,8 +33,8 @@ public class Clinique {
 
 		int doctorid = 0;
 		int patientid = 10;
-		int appointmentid = 100;
-		int nopatient=0;
+    
+		int nopatient = 0;
 		ArrayList<Appointment> appoint = new ArrayList<Appointment>();
 		ArrayList<Doctor> doctor = new ArrayList<Doctor>();
 		ArrayList<Patients> patient = new ArrayList<Patients>();
@@ -57,7 +58,7 @@ public class Clinique {
 		if (appointmentfile.exists() && appointmentfile.length() > 0) {
 			modelAppointment = (AppointmentModel) jsonutility.readMapper(appointmentsource, modelAppointment);
 			appoint.addAll(modelAppointment.getAppoinment());
-			appointmentid = appoint.size();
+			
 
 		}
 		boolean clinique = false;
@@ -93,7 +94,6 @@ public class Clinique {
 				System.out.println("Enter availabilty end time :");
 				int timeout = ScannerUtility.intScanner();
 
-				
 				doc.setNoofpatient(nopatient);
 				doc.setName(docname);
 				doc.setSpecialization(spec);
@@ -257,9 +257,9 @@ public class Clinique {
 				String appdoc = ScannerUtility.stringScanner();
 				boolean docfound = false;
 				int docindex = 0;
-				int idpatient=0;
-				int indexpatient=0;
-				String doctorname="";
+				int idpatient = 0;
+				int indexpatient = 0;
+				String doctorname = "";
 				for (int i = 0; i < doctor.size(); i++) {
 					if (appdoc.equals(doctor.get(i).getSpecialization())) {
 						docfound = true;
@@ -283,52 +283,51 @@ public class Clinique {
 						if (appid == doctor.get(i).getId()) {
 							System.out.println("Doctor is avail at " + doctor.get(i).getAvailablity().getDate());
 							System.out.println("You want to take appointment on this date (yes/no)");
-							doctorid=i+1;
-							int doctorindex=i;
-							doctorname=doctor.get(i).getName();
-							nopatient=doctor.get(i).getNoofpatient();
-							
+							doctorid = i + 1;
+
+							doctorname = doctor.get(i).getName();
+							nopatient = doctor.get(i).getNoofpatient();
+
 							String choice = ScannerUtility.stringScanner();
 							if (choice.equals("yes")) {
 								System.out.println(doctor.get(i).toString());
 								System.out.println("Enter time for appointment .");
 								int time = ScannerUtility.intScanner();
 								if ((time == doctor.get(i).getAvailablity().getTimein()
-										|| time == doctor.get(i).getAvailablity().getTimeout()) ) {
-									
-									
-									if(nopatient<=5) {
-									System.out.println("Enter your Patient id..");
-									int patientappointmentid=ScannerUtility.intScanner();
-									for(int j=0;j<patient.size();j++) {
-										if(patientappointmentid==patient.get(j).getId()) {
-											System.out.println("Your appointment has been booked ..");
-											idpatient=patient.get(j).getId();
-											indexpatient=j;
-											nopatient+=1;
-											
+										|| time == doctor.get(i).getAvailablity().getTimeout())) {
+
+									if (doctor.get(docindex).getNoofpatient() < 5) {
+										System.out.println("Enter your Patient id..");
+										int patientappointmentid = ScannerUtility.intScanner();
+										for (int j = 0; j < patient.size(); j++) {
+											if (patientappointmentid == patient.get(j).getId()) {
+												System.out.println("Your appointment has been booked ..");
+												idpatient = patient.get(j).getId();
+												indexpatient = j;
+												nopatient += 1;
+
+											}
 										}
-									}
-									
-								
-									Appointment appointment=new Appointment();
-									appointment.setDoctorid(doctorid);
-									
-							        doctor.get(doctorindex).setNoofpatient(nopatient);
-							        modelDoctor.setDoctor(doctor);
-									appointment.setPatientname(patient.get(indexpatient).getName());;
-									appointment.setPatientcontact(patient.get(indexpatient).getContact());
-									appointment.setPatientid(idpatient);
-									appointment.setDoctotavailability(choice);
-									appointment.setDoctorname(doctorname);
-									
-									appoint.add(appointment);
-									modelAppointment.setAppoinment(appoint);
-									
-									jsonutility.writeMapper(appointmentsource, modelAppointment);
-									jsonutility.writeMapper(doctorsource, modelDoctor);
-								
-									}else {
+
+										Appointment appointment = new Appointment();
+										appointment.setDoctorid(doctorid);
+
+										doctor.get(docindex).setNoofpatient(nopatient);
+										modelDoctor.setDoctor(doctor);
+										appointment.setPatientname(patient.get(indexpatient).getName());
+										;
+										appointment.setPatientcontact(patient.get(indexpatient).getContact());
+										appointment.setPatientid(idpatient);
+										appointment.setDoctotavailability(choice);
+										appointment.setDoctorname(doctorname);
+
+										appoint.add(appointment);
+										modelAppointment.setAppoinment(appoint);
+
+										jsonutility.writeMapper(appointmentsource, modelAppointment);
+										jsonutility.writeMapper(doctorsource, modelDoctor);
+
+									} else {
 										System.out.println("No of patient is full ");
 									}
 

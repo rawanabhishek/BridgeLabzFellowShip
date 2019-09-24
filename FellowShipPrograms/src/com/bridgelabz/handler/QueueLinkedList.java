@@ -186,6 +186,7 @@ public class QueueLinkedList<T> {
 		
 		//
 		
+		@SuppressWarnings("unchecked")
 		public T getData(int index) {
 
 			if (index == 0) {
