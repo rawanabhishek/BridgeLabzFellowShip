@@ -1,3 +1,12 @@
+/******************************************************************************
+ 
+ *  Purpose: maintain the Stock Symbol Purchased or Sold in a Stack
+ *           implemented using Linked List to indicate transactions done.
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   23-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.controller;
 
 

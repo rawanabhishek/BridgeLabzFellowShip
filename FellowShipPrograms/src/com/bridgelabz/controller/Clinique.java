@@ -1,4 +1,12 @@
-
+/******************************************************************************
+ 
+ *  Purpose: This programme is used to manage a list of  Doctors associated 
+ *           with the Clinique. 
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   24-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.controller;
 
 import java.io.File;
@@ -144,7 +152,15 @@ public class Clinique {
 					for (int i = 0; i < doctor.size(); i++) {
 						if (docsearchid == doctor.get(i).getId()) {
 							System.out.println(">Doctor Found< ");
-							System.out.println(doctor.get(i).toString());
+							System.out.println(" name :"+doctor.get(i).getName());
+							System.out.println(" id :"+doctor.get(i).getId());
+							System.out.println(" specialization :"+doctor.get(i).getSpecialization());
+							System.out.println(" timein  :"+doctor.get(i).getAvailablity().getTimein());
+							System.out.println(" timeout :"+doctor.get(i).getAvailablity().getTimeout());
+							System.out.println(" available date :"+doctor.get(i).getAvailablity().getDate());
+							System.out.println(" Number of patient :"+doctor.get(i).getNoofpatient());
+							System.out.println("-------------------");
+							
 							break;
 						}
 					}
@@ -164,7 +180,14 @@ public class Clinique {
 					for (int i = 0; i < doctor.size(); i++) {
 						if (docsearchname.equals(doctor.get(i).getName())) {
 							System.out.println(">Doctor Found< ");
-							System.out.println(doctor.get(i).toString());
+							System.out.println(" name :"+doctor.get(i).getName());
+							System.out.println(" id :"+doctor.get(i).getId());
+							System.out.println(" specialization :"+doctor.get(i).getSpecialization());
+							System.out.println(" timein  :"+doctor.get(i).getAvailablity().getTimein());
+							System.out.println(" timeout :"+doctor.get(i).getAvailablity().getTimeout());
+							System.out.println(" available date :"+doctor.get(i).getAvailablity().getDate());
+							System.out.println(" Number of patient :"+doctor.get(i).getNoofpatient());
+							System.out.println("-------------------");
 							break;
 						}
 					}
@@ -182,7 +205,14 @@ public class Clinique {
 					for (int i = 0; i < doctor.size(); i++) {
 						if (docsearchspecilization.equals(doctor.get(i).getSpecialization())) {
 							System.out.println(">Doctor Found< ");
-							System.out.println(doctor.get(i).toString());
+							System.out.println(" name :"+doctor.get(i).getName());
+							System.out.println(" id :"+doctor.get(i).getId());
+							System.out.println(" specialization :"+doctor.get(i).getSpecialization());
+							System.out.println(" timein  :"+doctor.get(i).getAvailablity().getTimein());
+							System.out.println(" timeout :"+doctor.get(i).getAvailablity().getTimeout());
+							System.out.println(" available date :"+doctor.get(i).getAvailablity().getDate());
+							System.out.println(" Number of patient :"+doctor.get(i).getNoofpatient());
+							System.out.println("-------------------");
 							break;
 						}
 					}
@@ -199,7 +229,14 @@ public class Clinique {
 					for (int i = 0; i < doctor.size(); i++) {
 						if (docsearchdate.equals(doctor.get(i).getAvailablity().getDate())) {
 							System.out.println(">Doctor Found< ");
-							System.out.println(doctor.get(i).toString());
+							System.out.println(" name :"+doctor.get(i).getName());
+							System.out.println(" id :"+doctor.get(i).getId());
+							System.out.println(" specialization :"+doctor.get(i).getSpecialization());
+							System.out.println(" timein  :"+doctor.get(i).getAvailablity().getTimein());
+							System.out.println(" timeout :"+doctor.get(i).getAvailablity().getTimeout());
+							System.out.println(" available date :"+doctor.get(i).getAvailablity().getDate());
+							System.out.println(" Number of patient :"+doctor.get(i).getNoofpatient());
+							System.out.println("-------------------");
 							break;
 						}
 					}
@@ -214,7 +251,11 @@ public class Clinique {
 					for (int i = 0; i < patient.size(); i++) {
 						if (pasearchid == patient.get(i).getId()) {
 							System.out.println(">Patient Found< ");
-							System.out.println(patient.get(i).toString());
+							System.out.println("name : "+patient.get(i).getName());
+							System.out.println("id : "+patient.get(i).getId());
+							System.out.println("contact : "+patient.get(i).getContact());
+							System.out.println("age : "+patient.get(i).getAge());
+							System.out.println("-----------------");
 							break;
 						}
 					}
@@ -230,7 +271,11 @@ public class Clinique {
 					for (int i = 0; i < patient.size(); i++) {
 						if (pasearchname.equals(patient.get(i).getName())) {
 							System.out.println(">Patient Found< ");
-							System.out.println(patient.get(i).toString());
+							System.out.println("name : "+patient.get(i).getName());
+							System.out.println("id : "+patient.get(i).getId());
+							System.out.println("contact : "+patient.get(i).getContact());
+							System.out.println("age : "+patient.get(i).getAge());
+							System.out.println("-----------------");
 							break;
 						}
 					}
@@ -245,7 +290,11 @@ public class Clinique {
 					for (int i = 0; i < patient.size(); i++) {
 						if (pasearchcontact.equals(patient.get(i).getContact())) {
 							System.out.println(">Patient Found< ");
-							System.out.println(patient.get(i).toString());
+							System.out.println("name : "+patient.get(i).getName());
+							System.out.println("id : "+patient.get(i).getId());
+							System.out.println("contact : "+patient.get(i).getContact());
+							System.out.println("age : "+patient.get(i).getAge());
+							System.out.println("-----------------");
 							break;
 						}
 					}
