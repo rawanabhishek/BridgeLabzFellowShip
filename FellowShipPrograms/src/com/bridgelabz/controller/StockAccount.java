@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -26,6 +27,7 @@ import com.bridgelabz.model.CustomerModel;
 import com.bridgelabz.model.Transactions;
 import com.bridgelabz.model.TransactionsModel;
 import com.bridgelabz.utility.ScannerUtility;
+import com.bridgelabz.utility.jsonutility;
 
 public class StockAccount {
 
@@ -48,12 +50,12 @@ public class StockAccount {
        
         
 		// creating arraylist of object
-		ArrayList<Company> companylist = new ArrayList<Company>();
-		ArrayList<Customer> customerlist = new ArrayList<Customer>();
+		List<Company> companylist = new ArrayList<>();
+		List<Customer> customerlist = new ArrayList<>();
 		ArrayList<Transactions> transactionlist = new ArrayList<Transactions>();
 
-		company = mapper.readValue(new File(sourceCompany), Companymodel.class);
-		customer = mapper.readValue(new File(sourceCustomer), CustomerModel.class);
+		company = (Companymodel) jsonutility.readMapper(sourceCompany, company);
+		customer = (CustomerModel) jsonutility.readMapper(sourceCustomer, customer);
 		
 		
         File file=new File(sourceTransaction);
@@ -268,17 +270,16 @@ public class StockAccount {
 							System.out.println("Company Value:"+companylist.get(companyindex).getTotalvalue());
 							System.out.println("Company shares price:"+companylist.get(0).getSharesprice());
 							System.out.println("Company  Shares :"+companylist.get(companyindex).getShares());
+					
 							
-//							System.out.println("----------------------------------");
-//							System.out.println("Transaction Date:"+transactionlist.get(0).getDate());
-//							System.out.println("Transaction Id:"+transactionlist.get(0).getTransactionid());
-//							System.out.println("transaction Amount:"+transactionlist.get(0).getAmount());
-//							System.out.println("Buyer :"+transactionlist.get(0).getBuyer());
-//							System.out.println("Seller :"+transactionlist.get(0).getSeller());
+					
+							jsonutility.writeMapper(sourceCompanyOut, company);
+						//	mapper.writeValue(new File(sourceCompanyOut), company.getCompany());
+							jsonutility.writeMapper(sourceCustomerOut, customer);
+							//mapper.writeValue(new File(sourceCustomerOut), customer.getCustomer());
 							
-							mapper.writeValue(new File(sourceCompanyOut), company.getCompany());
-							mapper.writeValue(new File(sourceCustomerOut), customer.getCustomer());
-							mapper.writeValue(new File(sourceTransaction), transactionlist);
+							jsonutility.writeMapper(sourceTransaction, transactionmodel);
+							//mapper.writeValue(new File(sourceTransaction), transactionlist);
 
 						} else {
 							System.out.println("You transaction was nott considered ");

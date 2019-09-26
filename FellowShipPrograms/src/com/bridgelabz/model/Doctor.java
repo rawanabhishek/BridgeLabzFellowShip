@@ -41,8 +41,9 @@ public class Doctor {
 	}
 	@Override
 	public String toString() {
-		return "DoctorModel [name=" + name + ", id=" + id + ", specialization=" + specialization + ", availablity="
-				+ availablity + "]";
+		return "Doctor [name=" + name + ", id=" + id + ", specialization=" + specialization + ", availablity="
+				+ availablity + ", noofpatient=" + noofpatient + "]";
 	}
+	
 
 }

@@ -9,14 +9,14 @@
  ******************************************************************************/
 package com.bridgelabz.controller;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+
 
 import com.bridgelabz.model.InventoryModel;
 import com.bridgelabz.model.Pulse;
@@ -24,6 +24,7 @@ import com.bridgelabz.model.Rice;
 import com.bridgelabz.model.Wheat;
 import com.bridgelabz.utility.OopsUtility;
 import com.bridgelabz.utility.ScannerUtility;
+import com.bridgelabz.utility.jsonutility;
 
 public class InventoryManager {
 
@@ -33,11 +34,11 @@ public class InventoryManager {
 
 		String sourceout = "/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/json/InventoryManagerOut.json";
 
-		ObjectMapper mapper = new ObjectMapper();
+	
 		
 
 		InventoryModel model = new InventoryModel();
-		model=mapper.readValue(new File(sourcein), InventoryModel.class);
+		model=(InventoryModel) jsonutility.readMapper(sourcein, model);
 
 		int total=model.getTotal();
 		int grandtotal=total;
@@ -105,7 +106,8 @@ public class InventoryManager {
 			model.setWheats(wheatlist);
 			
 			model.setGrandtotal(grandtotal);
-			mapper.writeValue(new File(sourceout), model);
+			jsonutility.writeMapper(sourceout, model);
+			
 
 		}
 

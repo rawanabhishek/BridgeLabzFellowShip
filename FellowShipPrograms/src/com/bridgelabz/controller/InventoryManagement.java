@@ -9,15 +9,16 @@
  ******************************************************************************/
 package com.bridgelabz.controller;
 
-import java.io.File;
+
 import java.io.IOException;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+
 
 import com.bridgelabz.model.InventoryModel;
 import com.bridgelabz.utility.OopsUtility;
+import com.bridgelabz.utility.jsonutility;
 
 public class InventoryManagement {
 
@@ -29,8 +30,9 @@ public class InventoryManagement {
       String sourceout="/home/admin1/FellowShip/FellowShipPrograms/src/"
       		+ "com/bridgelabz/json/InventoryOut.json";
       
-      ObjectMapper mapper=new ObjectMapper();
-		InventoryModel data = mapper.readValue(new File(sourcein), InventoryModel.class);
+      
+        InventoryModel data=new InventoryModel();
+	     data =(InventoryModel) jsonutility.readMapper(sourcein, data);
 
        int total=0;
        System.out.println("Rice name:"+data.getRice().get(0).getName());
@@ -59,7 +61,7 @@ public class InventoryManagement {
        
        data.setTotal(total);
        
-       mapper.writeValue(new File(sourceout), data);
+       jsonutility.writeMapper(sourceout, data);
        
 	}
 

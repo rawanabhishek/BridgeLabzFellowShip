@@ -9,17 +9,18 @@
  ******************************************************************************/
 package com.bridgelabz.controller;
 
-import java.io.File;
+
 import java.io.IOException;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+
 
 import com.bridgelabz.handler.LinkedList;
 import com.bridgelabz.model.Company;
 import com.bridgelabz.model.Companymodel;
 import com.bridgelabz.utility.ScannerUtility;
+import com.bridgelabz.utility.jsonutility;
 
 public class CompanyShares {
 
@@ -27,11 +28,11 @@ public class CompanyShares {
 
 		String sourceCompany = "/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/json/Company.json";
 
-		ObjectMapper mapper = new ObjectMapper();
+		
 
 		Companymodel model = new Companymodel();
 
-		model = mapper.readValue(new File(sourceCompany), model.getClass());
+		model = (Companymodel) jsonutility.readMapper(sourceCompany, model);
 
 		LinkedList<Company> list = new LinkedList<Company>();
 		list.addAll(model.getCompany());

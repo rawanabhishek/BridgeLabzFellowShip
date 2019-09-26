@@ -1,6 +1,36 @@
 {
 	"person": [
 		{
+			"firstname": "shivanjali",
+			"lastname": "kamble",
+			"contact": "451236589",
+			"address": {
+				"zipcode": "45213",
+				"city": "panvel",
+				"state": "maharahstra"
+			}
+		},
+		{
+			"firstname": "kunal",
+			"lastname": "kumbhar",
+			"contact": "741852369",
+			"address": {
+				"zipcode": "400078",
+				"city": "mumbai",
+				"state": "maharahstra"
+			}
+		},
+		{
+			"firstname": "prasad",
+			"lastname": "more",
+			"contact": "3214567890",
+			"address": {
+				"zipcode": "400078",
+				"city": "mumbai",
+				"state": "maharashtra"
+			}
+		},
+		{
 			"firstname": "abhishek",
 			"lastname": "rawat",
 			"contact": "8108411413",
@@ -28,6 +58,26 @@
 				"zipcode": "456123",
 				"city": "panvel",
 				"state": "maharahstra"
+			}
+		},
+		{
+			"firstname": "vishnu",
+			"lastname": "shelke",
+			"contact": "7418523690",
+			"address": {
+				"zipcode": "712365",
+				"city": "nagpur",
+				"state": "maharashtra"
+			}
+		},
+		{
+			"firstname": "vishal",
+			"lastname": "singh",
+			"contact": "1234567890",
+			"address": {
+				"zipcode": "462091",
+				"city": "delhi",
+				"state": "new"
 			}
 		}
 	]

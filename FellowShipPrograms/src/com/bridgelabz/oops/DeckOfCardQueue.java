@@ -44,8 +44,7 @@ public class DeckOfCardQueue {
 				j2++;
 
 			}
-//			System.out.println(Arrays.toString(arr));
-//			System.out.println();
+		
 			for (int i = 0; i < arr.length - 1; i++) {
 				for (int j = 0; j < arr.length - i - 1; j++) {
 					temp1 = arr[j];
@@ -64,19 +63,17 @@ public class DeckOfCardQueue {
 
 				}
 
-			}
-//			System.out.println(Arrays.toString(arr));
-//			System.out.println();
+			}	
 			queue.addRear("For Player " + p + " : \n");
 			for (int j = 0; j < 9; j++) {
 				temp4 = arr[j].substring(0, arr[j].length() - 2);
-				// System.out.print(temp4+"-->");
-				queue.addRear(temp4 + "-->");
+			
+				queue.addRear(temp4 + "  ");
 			}
-			// System.out.println();
+			
 			queue.addRear("\n");
 		}
-		// printing the queue
+	
 		queue.display();
 
 	}
