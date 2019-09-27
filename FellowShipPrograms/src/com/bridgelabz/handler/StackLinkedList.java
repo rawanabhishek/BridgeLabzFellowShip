@@ -99,6 +99,8 @@ public class StackLinkedList<T> {
 	@SuppressWarnings("unchecked")
 	public T peek() {
 		if (!isEmpty()) {
+			
+			
 			Node<T> n = head;
 			while (n.next != null) {
 				n = n.next;

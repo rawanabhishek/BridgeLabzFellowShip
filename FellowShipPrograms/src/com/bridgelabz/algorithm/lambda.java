@@ -1,24 +1,17 @@
 package com.bridgelabz.algorithm;
 
-public class lambda {
-	
-	
-	long sum(int a,long b)
-	{
-		return a+b;
-	}
-	long sum(long a,int b)
-	{
-		return a+b;
-	}
+abstract  class lambda {
 
+	public abstract void m1();
 
-	public static void main(String[] args) {
-         
-		lambda obj=new lambda();
-		System.out.println(obj.sum(1, 2l));
+}
+
+class c extends lambda{
+
+	@Override
+	public void m1() {
+		// TODO Auto-generated method stub
 		
-            
 	}
-
+	
 }

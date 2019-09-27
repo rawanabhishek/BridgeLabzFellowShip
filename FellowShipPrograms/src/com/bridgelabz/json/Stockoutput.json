@@ -1,1 +1,27 @@
-{"hdfc":[{"name":"hdfc_bank","share":323,"price":147,"valueOfHfc":47481}],"zee":[{"name":"zee5","share":500,"price":145,"valueOfZee":72500}],"valueOfAllStock":221456,"tata":[{"name":"tcs_india","share":825,"price":123,"valueOfTcs":101475}]}
+{
+	"hdfc": [
+		{
+			"name": "hdfc_bank",
+			"share": 323,
+			"price": 147,
+			"valueOfHfc": 47481
+		}
+	],
+	"zee": [
+		{
+			"name": "zee5",
+			"share": 500,
+			"price": 145,
+			"valueOfZee": 72500
+		}
+	],
+	"valueOfAllStock": 221456,
+	"tata": [
+		{
+			"name": "tcs_india",
+			"share": 825,
+			"price": 123,
+			"valueOfTcs": 101475
+		}
+	]
+}

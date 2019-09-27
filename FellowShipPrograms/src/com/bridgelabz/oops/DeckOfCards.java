@@ -17,18 +17,11 @@ public class DeckOfCards {
 		String[] cardType = { "hearts", "tiles", "pikes", "clovers" };
 		String[] cardNumbers = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
 		String[] cardsArray = new String[52];
-		int start = 0, end = 12, j1 = 0;
+		
 
-		// for combination of cardType and cardNumbers
-		for (int i = 0; i < 4; i++) {
-			for (int j = start; j <= end; j++) {
-				cardsArray[j] = cardType[i] + " " + cardNumbers[j1];
-				j1++;
-			}
-			j1 = 0;
-			start = end + 1;
-			end += 13;
-		}
+
+		
+		cardsArray=OopsUtility.CardInsertion(cardType, cardNumbers, cardsArray);
 
 		OopsUtility.shuffleCardsDeck(cardsArray);
 

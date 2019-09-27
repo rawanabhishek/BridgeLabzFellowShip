@@ -5,6 +5,12 @@
 			"weight": 15,
 			"priceperkg": 48,
 			"totalvalue": 720
+		},
+		{
+			"name": "ddd",
+			"weight": 45,
+			"priceperkg": 65,
+			"totalvalue": 2925
 		}
 	],
 	"pulses": [
@@ -15,10 +21,10 @@
 			"totalvalue": 525
 		},
 		{
-			"name": "dmart",
-			"weight": 45,
-			"priceperkg": 25,
-			"totalvalue": 1125
+			"name": "ass",
+			"weight": 56,
+			"priceperkg": 45,
+			"totalvalue": 2520
 		}
 	],
 	"wheats": [
@@ -30,5 +36,5 @@
 		}
 	],
 	"total": 1825,
-	"grandtotal": 2950
+	"grandtotal": 7270
 }
