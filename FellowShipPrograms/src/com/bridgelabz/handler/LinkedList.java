@@ -13,6 +13,7 @@ import java.util.List;
 public class LinkedList<T> {
 	Node<T> head;
 
+	@SuppressWarnings("unchecked")
 	public void insert(Object data) {
 
 		Node<T> node = new Node<T>();
