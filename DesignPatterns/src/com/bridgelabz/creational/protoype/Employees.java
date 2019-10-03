@@ -3,6 +3,14 @@ package com.bridgelabz.creational.protoype;
 import java.util.ArrayList;
 import java.util.List;
 
+/******************************************************************************
+
+ *  Purpose: Employees class implementing 
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   01-10-2019
+ *
+ ******************************************************************************/
 public class Employees implements Cloneable {
 private List<String> empList;
 	

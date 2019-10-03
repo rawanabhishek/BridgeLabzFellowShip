@@ -23,8 +23,7 @@ public class DeckOfCardQueue {
 				"King", "Queen", "Ace" };
 		String[] cardsArray = new String[52];
 		
-//		String[] ranks = {null, "Ace", "2", "3", "4", "5", "6",
-//	               "7", "8", "9", "10", "Jack", "Queen", "King"};
+
 
 		cardsArray = OopsUtility.CardInsertion(cardType, cardNumbers, cardsArray);
 

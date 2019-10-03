@@ -10,6 +10,9 @@ import com.bridgelabz.preparedstatement.repository.Connectivity;
 public class ImplSavePoint implements ISavePoint {
 	Connection connection = Connectivity.getConnection();
 
+	/**
+	 *  purpose : to perfrom save point using prepared statement
+	 */
 	@Override
 	public void savePoint() throws Exception {
 

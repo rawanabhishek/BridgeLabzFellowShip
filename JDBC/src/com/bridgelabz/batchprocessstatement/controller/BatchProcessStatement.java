@@ -1,5 +1,13 @@
 package com.bridgelabz.batchprocessstatement.controller;
 
+/******************************************************************************
+
+ *  Purpose: program to perform batch processing using statement
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   01-10-2019
+ *
+ ******************************************************************************/
 import java.sql.Connection;
 
 import java.sql.Statement;

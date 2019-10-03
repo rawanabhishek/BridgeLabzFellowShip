@@ -15,6 +15,9 @@ public class ImplStatement implements ICrudStatement {
 	static Connection connection = Connectivity.getConnection();
 	static Statement st = null;
 
+	/**
+	 *purpose :  to insert value in the table 
+	 */
 	@Override
 	public void createTable(Object student) throws Exception {
 
@@ -27,6 +30,9 @@ public class ImplStatement implements ICrudStatement {
 
 	}
 
+	/**
+	 *purpose :  to update the value in the table 
+	 */
 	@Override
 	public int update(int id, Object student) throws Exception {
 		String query = "UPDATE student SET name='" + ((Student) student).getName() + "', address='"
@@ -38,6 +44,9 @@ public class ImplStatement implements ICrudStatement {
 
 	}
 
+	/**
+	 *purpose : to delte the specific row from the table 
+	 */
 	@Override
 	public int delete(int id) throws Exception {
 		String query = "delete from  student where id='" + id + "'";
@@ -47,6 +56,9 @@ public class ImplStatement implements ICrudStatement {
 
 	}
 
+	/**
+	 *purpose : to print the whole table 
+	 */
 	@Override
 	public void showTable() throws Exception {
 

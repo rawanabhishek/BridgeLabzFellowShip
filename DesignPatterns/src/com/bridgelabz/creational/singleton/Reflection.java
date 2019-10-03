@@ -1,3 +1,11 @@
+/******************************************************************************
+
+ *  Purpose: program to perform Refelction Destroy Singleton Design Pattern
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   01-10-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.creational.singleton;
 
 import java.lang.reflect.Constructor;
@@ -8,8 +16,9 @@ public class Reflection {
 		Egar instanceOne = Egar.getEgar();
 		Egar instanceTwo = null;
 		try {
+			@SuppressWarnings("rawtypes")
 			Constructor[] constructors = Egar.class.getDeclaredConstructors();
-			for (Constructor constructor : constructors) {
+			for (Constructor<?> constructor : constructors) {
 				// Below code will destroy the singleton pattern
 				constructor.setAccessible(true);
 				instanceTwo = (Egar) constructor.newInstance();

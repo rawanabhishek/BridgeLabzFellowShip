@@ -79,7 +79,7 @@ public class OopsUtility {
 		int j1 = 0;
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < arr2.length; j++) {
-				arr3[j1] = arr1[i] + " " + arr2[j];
+				arr3[j1] = arr2[j] + " " + arr1[i];
 				j1++;
 			}
 

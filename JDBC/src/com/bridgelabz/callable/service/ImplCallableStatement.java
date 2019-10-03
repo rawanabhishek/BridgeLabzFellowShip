@@ -13,6 +13,9 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 	static Connection connection = Connectivity.getConnection();
 	static CallableStatement callable = null;
 
+	/**
+	 *purpose : to insert value in the table 
+	 */
 	@Override
 	public void createTable(Object student) throws Exception {
 
@@ -31,6 +34,9 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 
 	}
 
+	/**
+	 *purpose : to update values in the table 
+	 */
 	@Override
 	public int update(int id, Object student) throws Exception {
 		String query = "UPDATE student SET name='" + ((Student) student).getName() + "', address='"
@@ -42,6 +48,9 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 
 	}
 
+	/**
+	 *purpose : to delete a specific row in the table 
+	 */
 	@Override
 	public int delete(int id) throws Exception {
 		String query = "delete from  student where id='" + id + "'";
@@ -51,6 +60,9 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 
 	}
 
+	/**
+	 *purpose : to print the whole table 
+	 */
 	@Override
 	public void showTable() throws Exception {
 

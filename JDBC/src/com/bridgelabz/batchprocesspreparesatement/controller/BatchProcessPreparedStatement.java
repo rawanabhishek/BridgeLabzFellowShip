@@ -1,3 +1,11 @@
+/******************************************************************************
+ 
+ *  Purpose: program to perform batch processing using prepared statement
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   01-10-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.batchprocesspreparesatement.controller;
 
 import java.sql.Connection;

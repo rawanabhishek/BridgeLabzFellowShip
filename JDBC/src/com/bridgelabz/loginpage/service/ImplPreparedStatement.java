@@ -17,6 +17,9 @@ public class ImplPreparedStatement implements ICrudPreparedStatement {
 	static PreparedStatement ps = null;
 
 
+	/**
+	 *purpose : to insert value in the table
+	 */
 	@Override
 	public int createTable(Student student) throws Exception {
 
@@ -39,6 +42,9 @@ public class ImplPreparedStatement implements ICrudPreparedStatement {
 	}
 
 
+	/**
+	 *purpose : to check the user is present in the table or not 
+	 */
 	@Override
 	public   Student  checkUser(int id , String name ) throws Exception {
 		
