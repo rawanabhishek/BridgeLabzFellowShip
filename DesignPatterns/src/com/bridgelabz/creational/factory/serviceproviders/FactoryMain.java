@@ -13,7 +13,7 @@ public class FactoryMain {
 	public static void main(String[] args) {
 		
 		InternetProviderFactory internet=new InternetProviderFactory();
-		InternetProvider provider=internet.getInstance("best");
+		InternetProvider provider=internet.getInstance("mo");
 		provider.name();
 		provider.qualityService();
 		provider.price();

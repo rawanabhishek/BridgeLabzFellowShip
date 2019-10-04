@@ -60,6 +60,7 @@ public class LoginPage {
 				if (util.checkUser(regid, regname).getName() == null) {
 
 					util.createTable(student);
+					System.out.println(" you have been register succesfully ");
 				} else {
 
 					System.out.println("User already present ");

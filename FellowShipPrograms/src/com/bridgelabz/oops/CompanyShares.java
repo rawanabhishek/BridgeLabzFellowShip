@@ -10,6 +10,7 @@
 package com.bridgelabz.oops;
 
 
+
 import java.io.IOException;
 
 import org.codehaus.jackson.JsonParseException;
@@ -29,8 +30,9 @@ public class CompanyShares {
 		String sourceCompany = "/home/admin1/FellowShip/FellowShipPrograms/src/com/bridgelabz/json/Company.json";
 
 		
-
 		Companymodel model = new Companymodel();
+		
+
 
 		model = (Companymodel) jsonutility.readMapper(sourceCompany, model);
 

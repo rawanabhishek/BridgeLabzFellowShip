@@ -37,7 +37,7 @@ public class CrudStatement {
 				System.out.println("Enter student address  : ");
 				student.setAddress(scanner.next());
 				util.createTable(student);
-				System.out.println("value inserted created succesfully ");
+				System.out.println("value inserted  succesfully ");
 				break;
 
 			case 2:
