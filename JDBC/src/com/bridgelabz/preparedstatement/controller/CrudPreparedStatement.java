@@ -53,13 +53,14 @@ public class CrudPreparedStatement {
 			case 3:
 				util.showTable();
 				System.out.println("Enter id which you want to perform updation ");
-				int id = scanner.nextInt();
+				student.setId(scanner.nextInt());
+				
 				System.out.println("Enter name to change: ");
 				student.setName(scanner.next());
 				System.out.println("Enter address to change: ");
 				student.setAddress(scanner.next());
 
-				util.update(id, student);
+				util.update( student);
 
 				util.showTable();
 				break;
@@ -69,8 +70,12 @@ public class CrudPreparedStatement {
 				System.out.println("Enter id which you want to delete ");
 				int deleteId = scanner.nextInt();
 				util.delete(deleteId);
-				util.showTable();
-
+				if(util.delete(deleteId)==0) {
+				System.out.println("No such user present");
+				
+				}else {
+					util.showTable();
+				}
 				break;
 
 			case 5:

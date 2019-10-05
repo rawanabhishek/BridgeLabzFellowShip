@@ -27,7 +27,7 @@ public class BatchProcessPreparedStatement {
 		ps = (PreparedStatement) connection.prepareStatement(query);
 		ps1 = (PreparedStatement) connection.prepareStatement(query1);
 		
-		ps1.addBatch();
+		ps1.execute();
 		ps.setInt(1, 8);
 		ps.setString(2, "abhishek");
 		ps.setString(3, "bhandup");
@@ -53,7 +53,7 @@ public class BatchProcessPreparedStatement {
 		ps.setString(3, "latur");
 		ps.addBatch();
 
-         ps1.execute();
+        
 		return ps.executeBatch();
 
 	}

@@ -63,9 +63,12 @@ public class CrudStatement {
 				util.showTable();
 				System.out.println("Enter id which you want to delete ");
 				int deleteId = scanner.nextInt();
-				util.delete(deleteId);
+				if(util.delete(deleteId)!=0) {
+				
 				util.showTable();
-
+				}else {
+					System.out.println(" no such user found ");
+				}
 				break;
 			case 5:
 				exit = false;

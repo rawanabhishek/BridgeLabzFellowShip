@@ -33,13 +33,17 @@ public class ImplPreparedStatement implements ICrudPreparedStatement {
 	 * purpose : to update values in the table
 	 */
 	@Override
-	public int update(int id, Object student) throws Exception {
-		String query = "UPDATE student SET name='" + ((Student) student).getName() + "', address='"
-				+ ((Student) student).getAddress() + "' WHERE id=" + id + "";
+	public int update( Object student) throws Exception {
 
+
+		String query = "UPDATE student SET name=?, address=? WHERE id=?";
 		ps = connection.prepareStatement(query);
+		ps.setString(1, ((Student) student).getName());
+		ps.setString(2, ((Student) student).getAddress());
+		ps.setInt(3, ((Student) student).getId());
+		
 
-		return ps.executeUpdate(query);
+		return ps.executeUpdate();
 
 	}
 
@@ -48,10 +52,12 @@ public class ImplPreparedStatement implements ICrudPreparedStatement {
 	 */
 	@Override
 	public int delete(int id) throws Exception {
-		String query = "delete from  student where id='" + id + "'";
+		String query = "delete from  student where id=?";
 		ps = connection.prepareStatement(query);
+		ps.setInt(1, id);
+		
 
-		return ps.executeUpdate(query);
+		return ps.executeUpdate();
 
 	}
 

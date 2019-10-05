@@ -10,6 +10,11 @@ package com.bridgelabz.statement.service;
 
 public interface ICrudStatement {
 
+	/**
+	 * @param id user id 
+	 * @return
+	 * @throws Exception
+	 */
 	int delete(int id) throws Exception;
 
 	int update(int id, Object student) throws Exception;

@@ -21,8 +21,8 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 
 
 
-		String query = "insert into student values(?,?,?)";
-		callable =   (CallableStatement)  connection.prepareCall(query);
+	
+		callable =   (CallableStatement)  connection.prepareCall(" call Inser_Into(?,?,?)");
 		callable.setInt(1, ((Student) student).getId());
 		callable.setString(2, ((Student) student).getName());
 		callable.setString(3, ((Student) student).getAddress());
@@ -38,13 +38,15 @@ public class ImplCallableStatement implements ICrudCallableStatement {
 	 *purpose : to update values in the table 
 	 */
 	@Override
-	public int update(int id, Object student) throws Exception {
-		String query = "UPDATE student SET name='" + ((Student) student).getName() + "', address='"
-				+ ((Student) student).getAddress() + "' WHERE id=" + id + "";
+	public int update( Object student) throws Exception {
+//		String query = "UPDATE student SET name='" + ((Student) student).getName() + "', address='"
+//				+ ((Student) student).getAddress() + "' WHERE id=" + id + "";
 
-		callable = connection.prepareCall(query);
-
-		return callable.executeUpdate(query);
+		callable = connection.prepareCall("call update_call(?,?,?)");
+		callable.setInt(1, ((Student) student).getId());
+		callable.setString(2, ((Student) student).getName());
+		callable.setString(3, ((Student) student).getAddress());
+		return callable.executeUpdate();
 
 	}
 

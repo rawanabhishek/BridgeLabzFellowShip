@@ -45,7 +45,7 @@ public class ImplStatement implements ICrudStatement {
 	}
 
 	/**
-	 *purpose : to delte the specific row from the table 
+	 *purpose : to delete the specific row from the table 
 	 */
 	@Override
 	public int delete(int id) throws Exception {
