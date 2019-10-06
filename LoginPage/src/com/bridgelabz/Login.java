@@ -21,16 +21,16 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String uname = request.getParameter("uname");
+		String username = request.getParameter("username");
 		String pass = request.getParameter("pass");
 
 		Dao dao = new Dao();
 
-		if (dao.check(uname, pass)) {
+		if (dao.check(username, pass)) {
 
 			HttpSession session = request.getSession();
 
-			session.setAttribute("userName", uname);
+			session.setAttribute("userName", username);
 
 			response.sendRedirect("Welcome.jsp");
 
