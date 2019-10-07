@@ -23,6 +23,30 @@ td, th {
 tr:nth-child(even) {
 	background-color: #dddddd;
 }
+
+button {
+	background-color: #4CAF50;
+	align: middle;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 45%;
+}
+
+
+
+button:hover {
+	opacity: 0.8;
+}
+button.fixed {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 150px;
+	border: 3px solid #73AD21;
+}
 </style>
 
 <head>
@@ -53,7 +77,7 @@ tr:nth-child(even) {
 	<h2>
 		${userName}
 		<form action="logout" method="post">
-			<button type="submit" value="Logout" class="fixed">Logout</button>
+			<button type="submit" value="Logout"  class ="fixed">Logout</button>
 		</form>
 	</h2>
 

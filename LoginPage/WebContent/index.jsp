@@ -43,19 +43,9 @@ button.fixed {
 			response.sendRedirect("login.jsp");
 
 		}
-		String name = String.valueOf(session.getAttribute("userName"));
-		Dao dao = new Dao();
-		User user = new User();
 
-		ResultSet rs = dao.userData(name);
-		while (rs.next()) {
-			user.setFirstName(rs.getString("first_name"));
-			user.setLastName(rs.getString("last_name"));
-			user.setUserName(rs.getString("username"));
-			user.setEmail(rs.getString("email"));
-			user.setContact(rs.getString("contact"));
 
-		}
+		
 	%>
 	<h2>
 		Welcome ${userName}
@@ -66,12 +56,11 @@ button.fixed {
 	</h2>
 
 
-	<form >
 	
+
 		<button type="button" value="showdetails" ><a href="showdetails.jsp">Show Details</a></button>
+  
 
-
-	</form>
 
 
 
