@@ -58,7 +58,7 @@ button.fixed {
 
 	
 
-		<button type="button" value="showdetails" ><a href="showdetails.jsp">Show Details</a></button>
+	  <center><a href="showdetails.jsp" >Show Details</a></center>
   
 
 
