@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
 
 			session.setAttribute("userName", username);
 			
-			session.setMaxInactiveInterval(30*60);
+			session.setMaxInactiveInterval(2*60);
 			Cookie userName = new Cookie("user", username);
 			userName.setMaxAge(30*60);
 			response.addCookie(userName);

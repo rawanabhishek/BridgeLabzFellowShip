@@ -25,10 +25,9 @@ public class Dao {
 	String uname = "root";
 	String pass = "password";
 
-	
-
 	/**
 	 * purpose : to check the user is present in the databse or not
+	 * 
 	 * @param username validating the user name
 	 * @param password validating the password
 	 * @return
@@ -45,7 +44,6 @@ public class Dao {
 			st.setString(2, password);
 
 			ResultSet rs = st.executeQuery();
-			
 
 			if (rs.next()) {
 				return true;
@@ -54,32 +52,32 @@ public class Dao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return false;
-		
-		
 
 	}
 
 	/**
 	 * purpose : to insert the user data in the database
-	 * @param user  registrating the user
+	 * 
+	 * @param user registrating the user
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
 	public void registerUser(User user) throws ClassNotFoundException, SQLException {
 
-		String query = "insert into user (first_name ,last_name ,email,contact, password ,username) values (?,?,?,?,?,?)";
+		String query = "insert into user (first_name ,last_name ,email,contact, password ,username ,dateupdated) values (?,?,?,?,?,?,?)";
 
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection(url, uname, pass);
 		st = con.prepareStatement(query);
 		st.setString(1, user.getFirstName());
-		st.setString(2, user.getLastLast());
+		st.setString(2, user.getLastName());
 		st.setString(3, user.getEmail());
 		st.setString(4, user.getContact());
 		st.setString(5, user.getPassword());
 		st.setString(6, user.getUserName());
+		st.setString(7, user.getDateUpdate());
 
 		st.execute();
 		Close();
@@ -88,6 +86,7 @@ public class Dao {
 
 	/**
 	 * purpose : to check the user id present in the database or not
+	 * 
 	 * @param username validating the user name
 	 * @return boolean value
 	 */
@@ -100,8 +99,7 @@ public class Dao {
 			st.setString(1, username);
 
 			ResultSet rs = st.executeQuery();
-			
-			
+
 			if (rs.next()) {
 				return true;
 			}
@@ -111,6 +109,28 @@ public class Dao {
 		}
 
 		return false;
+
+	}
+
+	/**
+	 * purpose : to return the paticular data of the user 
+	 * 
+	 * @param username validating the user name
+	 * @return boolean value
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public ResultSet userData(String username) throws ClassNotFoundException, SQLException {
+		String sql = "select * from user where username=?";
+
+		Class.forName("com.mysql.jdbc.Driver");
+		con = DriverManager.getConnection(url, uname, pass);
+		st = con.prepareStatement(sql);
+		st.setString(1, username);
+
+		ResultSet rs = st.executeQuery();
+
+		return rs;
 
 	}
 

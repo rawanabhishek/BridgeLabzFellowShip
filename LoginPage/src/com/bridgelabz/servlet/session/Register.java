@@ -10,6 +10,8 @@ package com.bridgelabz.servlet.session;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,12 +40,18 @@ public class Register extends HttpServlet {
 		User user = new User();
 
 		user.setFirstName(request.getParameter("fname"));
-		user.setLastLast(request.getParameter("lname"));
+		user.setLastName(request.getParameter("lname"));
 		user.setEmail(request.getParameter("email"));
 		user.setUserName(request.getParameter("username"));
 		user.setContact(request.getParameter("contact"));
 		user.setPassword(request.getParameter("pass"));
 
+		LocalDateTime date =LocalDateTime.now();
+		DateTimeFormatter format=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		
+		user.setDateUpdate(format.format(date));
+		
+		
 		Dao dao = new Dao();
 
 		try {
@@ -57,7 +65,7 @@ public class Register extends HttpServlet {
 				session.setAttribute("userName", user.getUserName());
 
 				dao.registerUser(user);
-				response.sendRedirect("Welcome.jsp");
+				response.sendRedirect("index.jsp");
 
 			}
 

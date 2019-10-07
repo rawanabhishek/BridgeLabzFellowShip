@@ -44,6 +44,8 @@ public class RegisterFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		response.setContentType("text/html");
 		
+		
+		//getting values using request.getparameter
 		String username = request.getParameter("username");
 		String pass = request.getParameter("pass");
         String fname=request.getParameter("fname");
@@ -53,6 +55,8 @@ public class RegisterFilter implements Filter {
       
 		PrintWriter out = response.getWriter();
 		
+		
+		//filtering the data from the form
 		if(username == null || username.length() < 3) {
 			out.println("<script>alert('worng username  input')</script>");
 			RequestDispatcher rd = request.getRequestDispatcher("register.jsp");

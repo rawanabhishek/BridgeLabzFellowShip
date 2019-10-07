@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.bridgelabz.servlet.dao.Dao"%>
+<%@page import="com.bridgelabz.servlet.model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,14 +38,33 @@ button.fixed {
 <body>
 
 	<%
+	   
+	    
 		response.setHeader("Cache-Control", "no-cache ,no-store ,must-revalidate");
 		if (session.getAttribute("userName") == null) {
 			response.sendRedirect("login.jsp");
 
 		}
+		String name=String.valueOf(session.getAttribute("userName"));
+		Dao dao=new Dao();
+		User user=new User();
+		
+		ResultSet rs=dao.userData(name);
+		while(rs.next()){
+			user.setFirstName(rs.getString("first_name"));
+			user.setLastName(rs.getString("last_name"));
+			user.setUserName(rs.getString("username"));
+			user.setEmail(rs.getString("email"));
+			user.setContact(rs.getString("contact"));
+			
+		}
+		
+		
+		
+		
 	%>
 	<h2>
-		Welcome ${userName}
+	<span>Welcome ${userName}</span>
 		<form action="logout" method="post">
 
 			

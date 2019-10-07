@@ -3,22 +3,30 @@ package com.bridgelabz.servlet.model;
 public class User {
 	
 	private String firstName;
-	private String lastLast;
+	private String lastName;
 	private String password;
 	private String email;
 	private String contact;
 	private String userName;
+	private String dateUpdate;
+	public String getDateUpdate() {
+		return dateUpdate;
+	}
+	public void setDateUpdate(String dateUpdate) {
+		this.dateUpdate = dateUpdate;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastLast() {
-		return lastLast;
+	
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastLast(String lastLast) {
-		this.lastLast = lastLast;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getPassword() {
 		return password;
@@ -46,7 +54,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastLast=" + lastLast + ", email=" + email
+		return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", contact=" + contact + ", userName=" + userName + "]";
 	}
 	
