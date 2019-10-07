@@ -1,4 +1,4 @@
-package com.bridgelabz.model;
+package com.bridgelabz.servlet.model;
 
 public class User {
 	

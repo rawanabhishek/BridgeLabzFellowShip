@@ -1,4 +1,12 @@
-package com.bridgelabz;
+/******************************************************************************
+ 
+ *  Purpose: to perform logout operation of user 
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   07-10-2019
+ *
+ ******************************************************************************/
+package com.bridgelabz.servlet.session;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -25,7 +33,7 @@ public class Logout extends HttpServlet {
 		HttpSession session=request.getSession();
 		session.removeAttribute("userName");
 		session.invalidate();
-		response.sendRedirect("Login.jsp");
+		response.sendRedirect("login.jsp");
 		
 
 	}

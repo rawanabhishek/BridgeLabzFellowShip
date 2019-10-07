@@ -6,7 +6,7 @@
  *  @since   06-10-2019
  *
  ******************************************************************************/
-package com.bridgelabz;
+package com.bridgelabz.servlet.session;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bridgelabz.model.User;
+import com.bridgelabz.servlet.dao.Dao;
+import com.bridgelabz.servlet.model.User;
 
 /**
  * Servlet implementation class Register
@@ -47,6 +48,7 @@ public class Register extends HttpServlet {
 
 		try {
 			if (dao.checkUserName(user.getUserName())) {
+				dao.Close();
 
 			} else {
 

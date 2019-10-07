@@ -30,13 +30,14 @@ button.fixed {
 
 <head>
 <title>Insert title here</title>
+<link rel="shortcut icon" type="image/png" href="user.png"  >
 </head>
 <body>
 
 	<%
 		response.setHeader("Cache-Control", "no-cache ,no-store ,must-revalidate");
 		if (session.getAttribute("userName") == null) {
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("login.jsp");
 
 		}
 	%>

@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 
-
 <meta charset="UTF-8">
+
 <style>
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -14,13 +14,15 @@ form {
 	border: 3px solid #f1f1f1;
 	margin-top: 30px;
 	margin-bottom: 100px;
-	margin-right: 450px;
-	margin-left: 450px;
+	margin-right: 500px;
+	margin-left: 500px;
 }
 
 input[type=text], input[type=password] {
 	width: 100%;
 	padding: 12px 20px;
+	
+
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
@@ -34,12 +36,15 @@ button {
 	margin: 8px 0;
 	border: none;
 	cursor: pointer;
-	width: 50%;
+	width: 45%;
 }
+
+
 
 button:hover {
 	opacity: 0.8;
 }
+
 
 .cancelbtn {
 	width: auto;
@@ -54,7 +59,7 @@ button:hover {
 
 img.avatar {
 	width: 15%;
-	border-radius: 50%;
+	
 }
 
 .container {
@@ -79,42 +84,33 @@ span.psw {
 </style>
 <head>
 
-<title>registeration page</title>
-<link rel="shortcut icon" type="image/png" href="born.png"  >
+<title>Login Page</title>
+<link rel="shortcut icon" type="image/png" href="user.png"  >
 </head>
 <body>
 
-<h2 align="center">Registeration Form</h2>
-
-<div class="imgcontainer">
-			<img src="beared.jpg" alt="Avatar" class="avatar">
-		</div>
-	<form action="register" method="post">
+	<h2 align="center">Login Form</h2>
 	
+	<div class="imgcontainer">
+			<img src="user.png" alt="Avatar" class="avatar">
+		</div>
 
+	<form action="login" method="post">
+		
 
 		<div class="container">
-			<label for="fname"><b>First Name</b></label> <input type="text"
-				placeholder="Enter Firstname" name="fname" required> <label
-				for="lname"><b>Last Name</b></label> <input type="text"
-				placeholder="Enter Lastname" name="lname" required> <label
-				for="username"><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="username" required> <label
-				for="email"><b>Email</b></label> <input type="text"
-				placeholder="Enter Email" name="email" required> <label
-				for="contact"><b>Contact</b></label> <input type="text"
-				placeholder="Enter Contact" name="contact" required> <label
-				for="pass"><b>Password</b></label> <input type="password"
-				placeholder="Enter Password" name="pass" required>
+			<label for="username" ><b>Username</b></label> <input type="text"
+				placeholder="Enter Username" name="username" > 
+			<label for="pass"><b>Password</b></label> <input type="password"
+				placeholder="Enter Password" name="pass" >
 
-			<button type="submit">Register</button>
+			<button type="submit">Login</button>  <button type="button" ><a href="register.jsp">Register</a></button>
+			
 
 		</div>
 
 
 	</form>
-
-
 
 
 
