@@ -134,6 +134,10 @@ public class Dao {
 
 	}
 
+	/**
+	 * purpose : to close the connection 
+	 * @throws SQLException
+	 */
 	public void Close() throws SQLException {
 		st.close();
 		con.close();

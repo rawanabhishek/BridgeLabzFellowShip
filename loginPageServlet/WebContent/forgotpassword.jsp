@@ -4,7 +4,6 @@
 <html>
 
 <meta charset="UTF-8">
-
 <style>
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +33,7 @@ button {
 	margin: 8px 0;
 	border: none;
 	cursor: pointer;
-	width: 45%;
+	width: 100%;
 }
 
 button:hover {
@@ -77,52 +76,25 @@ span.psw {
 }
 </style>
 <head>
-
-<title>Login Page</title>
 <link rel="shortcut icon" type="image/png" href="user.png">
+<title>Insert title here</title>
 </head>
 <body>
 
-	<h2 align="center">Login Form</h2>
 
+	<h2 align="center">Forgot Password</h2>
 	<div class="imgcontainer">
 		<img src="user.png" alt="Avatar" class="avatar">
 	</div>
-
-	<form action="login" method="post">
-
-
+	<form action="forgot" method="get">
 		<div class="container">
-			<label for="username"><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="username"> <label
-				for="pass"><b>Password</b></label> <input type="password"
-				placeholder="Enter Password" name="pass">
+			<label for="email"><b>Email</b></label> <input type="text"
+				placeholder="Enter email  " name="email">
 
-			<button type="submit">Login</button>
-			<button type="button">
-				<a href="register.jsp">Register</a>
-			</button>
-
-
+			<button type="submit">Send Verification Link</button>
 		</div>
 
-		
-
-			  
-
-
-		
-
-
 	</form>
-	
-	 <a href="forgetpassword.jsp"> Forgot Password ?</align> </a>
-
-
-
-
-
-
 
 </body>
 </html>
