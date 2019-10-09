@@ -70,6 +70,7 @@ button.fixed {
 			user.setUserName(rs.getString("username"));
 			user.setEmail(rs.getString("email"));
 			user.setContact(rs.getString("contact"));
+			user.setDateUpdate(rs.getString("dateupdated"));
 
 		}
 	%>

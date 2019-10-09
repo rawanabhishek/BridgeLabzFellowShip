@@ -21,7 +21,7 @@ public class Dao {
 	static Connection con = null;
 	static PreparedStatement st = null;
 
-	String url = "jdbc:mysql://localhost:3306/college?verifyServerCertificate=false&useSSL=true";
+	String url = "jdbc:mysql://localhost:3306/users?verifyServerCertificate=false&useSSL=true";
 	String uname = "root";
 	String pass = "password";
 
