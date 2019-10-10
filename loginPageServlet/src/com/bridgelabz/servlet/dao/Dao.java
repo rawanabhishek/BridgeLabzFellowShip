@@ -9,10 +9,22 @@
 package com.bridgelabz.servlet.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import com.bridgelabz.servlet.model.User;
 
@@ -113,7 +125,7 @@ public class Dao {
 	}
 
 	/**
-	 * purpose : to return the paticular data of the user 
+	 * purpose : to return the paticular data of the user
 	 * 
 	 * @param username validating the user name
 	 * @return boolean value
@@ -135,7 +147,8 @@ public class Dao {
 	}
 
 	/**
-	 * purpose : to close the connection 
+	 * purpose : to close the connection
+	 * 
 	 * @throws SQLException
 	 */
 	public void Close() throws SQLException {
@@ -143,5 +156,73 @@ public class Dao {
 		con.close();
 
 	}
+	
+	/**
+	 * purpose : to send email  to receipnt
+	 * @param host server 
+	 * @param port  server port to host
+	 * @param toAddress recipent email address 
+	 * @throws AddressException
+	 * @throws MessagingException
+	 */
+	public static void sendEmail(String host, String port,
+            final String toAddress) throws AddressException,
+            MessagingException {
+		
+		String userName="forgotbridge70@gmail.com";
+		String password="8855220088";
+ 
+        // sets SMTP server properties
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", port);
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+ 
+        // creates a new session with an authenticator
+        Authenticator auth = new Authenticator() {
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(userName, password);
+            }
+        };
+ 
+        Session session = Session.getInstance(properties, auth);
+ 
+        // creates a new e-mail message
+        Message msg = new MimeMessage(session);
+ 
+        msg.setFrom(new InternetAddress(userName));
+        InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
+        msg.setRecipients(Message.RecipientType.TO, toAddresses);
+ 
+       
+        msg.setText("http://localhost:8080/loginPageServlet/resetpassword.jsp?email="+toAddress);
+ 
+        // sends the e-mail
+        Transport.send(msg);
+ 
+    }
+	
+	
+	/**
+	 * purpose : to change the password of the user 
+	 * @param email user email to change password
+	 * @param password user new password
+	 * @return  true if the execution is perfromed else return false 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	public boolean changePassword(String email, String password) throws SQLException, ClassNotFoundException {
+		 Class.forName("com.mysql.jdbc.Driver");
+		con = DriverManager.getConnection(url, uname, pass);
+		st = con.prepareStatement("UPDATE user SET password=? WHERE email=?");
 
+		st.setString(1, password);
+	  	st.setString(2, email);
+		if (st.executeUpdate() == 1)
+			return true;
+		return false;
+	}
+
+	
 }

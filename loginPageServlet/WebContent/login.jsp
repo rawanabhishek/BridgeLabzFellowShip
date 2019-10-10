@@ -116,7 +116,7 @@ span.psw {
 
 	</form>
 	
-	 <a href="forgetpassword.jsp"> Forgot Password ?</align> </a>
+	 <a href="forgotpassword.jsp"> Forgot Password ?</align> </a>
 
 
 

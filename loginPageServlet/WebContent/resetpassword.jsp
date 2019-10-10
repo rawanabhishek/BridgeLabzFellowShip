@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 
 <meta charset="UTF-8">
 <style>
@@ -76,25 +77,34 @@ span.psw {
 }
 </style>
 <head>
+<title>Reset Password</title>
 <link rel="shortcut icon" type="image/png" href="user.png">
-<title>forogot password</title>
 </head>
 <body>
 
-
-	<h2 align="center">Forgot Password</h2>
+<h2 align="center">Forgot Password</h2>
 	<div class="imgcontainer">
 		<img src="user.png" alt="Avatar" class="avatar">
 	</div>
-	<form action="forgot" method="get">
+	
+	<form action="reset" method="post">
 		<div class="container">
-			<label for="email"><b>Email</b></label> <input type="text"
-				placeholder="Enter email  " name="email">
+		
+		<input type="hidden" name="email"
+							value="<%=request.getParameter("email")%>">
+			<label for="newpassword"><b>new password</b></label> <input type="password"
+				placeholder="new password" name="newpassword">
+				
+				<label for="confirmnewpassword"><b>confrim new password</b></label> <input type="password"
+				placeholder="confirm new password" name="confirmnewpassword">
 
-			<button type="submit">Send Verification Link</button>
+			<button type="submit">Reset Password</button>
 		</div>
 
 	</form>
+
+
+
 
 </body>
 </html>

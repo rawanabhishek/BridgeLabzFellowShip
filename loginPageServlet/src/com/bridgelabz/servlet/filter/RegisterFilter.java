@@ -45,6 +45,7 @@ public class RegisterFilter implements Filter {
 		response.setContentType("text/html");
 		
 		
+		
 		//getting values using request.getparameter
 		String username = request.getParameter("username");
 		String pass = request.getParameter("pass");
