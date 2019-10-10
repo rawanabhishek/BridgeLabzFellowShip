@@ -1,3 +1,12 @@
+/******************************************************************************
+ 
+ *  Purpose: to the new password of user and update the user password 
+ *           password
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   10-10-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.servlet.session;
 
 import java.io.IOException;

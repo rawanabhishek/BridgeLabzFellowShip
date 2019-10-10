@@ -1,3 +1,12 @@
+/******************************************************************************
+ 
+ *  Purpose: to get the user email and send mail to the user for resetting 
+ *           password
+ *  @author  Abhishek Rawat
+ *  @version 1.0
+ *  @since   10-10-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.servlet.session;
 
 import java.io.IOException;
